@@ -7,9 +7,9 @@
 
 <body>
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+        <button class="tablinks" onclick="openPage(event, 'London')">London</button>
+        <button class="tablinks" onclick="openPage(event, 'Paris')">Paris</button>
+        <button class="tablinks" onclick="openPage(event, 'Tokyo')">Tokyo</button>
     </div>
 
     <div id="London" class="tabcontent">
@@ -26,8 +26,6 @@
         <h3>Tokyo</h3>
         <p>Tokyo is the capital of Japan.</p>
     </div>
-
-    <script src="/scripts/openPage.js"></script>
 </body>
 
 </html>

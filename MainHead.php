@@ -4,4 +4,3 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>RMbooking</title>
 <link rel="stylesheet" href="/styles/main.css">
-<script src="/scripts/openPage.js"></script>

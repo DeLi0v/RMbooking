@@ -5,7 +5,7 @@
     <?php include_once ("MainHead.php") ?>
 </head>
 
-<body>
+<body styles=body>
     <div>
         <h1>Hello world!</h1>
     </div>

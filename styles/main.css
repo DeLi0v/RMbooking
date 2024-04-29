@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body, html {
@@ -8,19 +9,18 @@ body, html {
 }
 
 .nav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
+    height: 100%; /* Навигация по всей высоте экрана */
+    position: fixed; /* Навигация всегда на экране, без вертикальной прокрутки */
+    z-index: 1; /* Выше всех элементов */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
+    background-color: #111; 
+    overflow-x: hidden; /* Отключение горизонтальной прокрутки */
     padding-top: 20px;
 }
 
 .nav a {
-    padding: 6px 8px 6px 16px;
+    padding: 5px 20px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;

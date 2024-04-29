@@ -26,6 +26,7 @@
         <h3>Tokyo</h3>
         <p>Tokyo is the capital of Japan.</p>
     </div>
+    <script src="/scripts/openPage.js"></script>
 </body>
 
 </html>

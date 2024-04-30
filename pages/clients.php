@@ -1,5 +1,3 @@
-
-
     <?php
     require_once("../connect.php");
 
@@ -8,7 +6,6 @@
     mysqli_select_db($conn, $db->database);
 
     $sql = "SELECT 
-                id AS id,
                 surname AS surname,
                 name AS name,
                 patronymic AS patronymic,
@@ -19,32 +16,32 @@
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) { ?>
-    <table>
-    <tr>
-        <th>id</th>
-        <th>Фамилия</th>
-        <th>Имя</th>
-        <th>Отчество</th>
-        <th>Телефон</th>
-        <th>Почта</th>
-    </tr>
-    
-    <?php
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $row["id"] . "</td>";
-        echo "<td>" . $row["surname"] . "</td>";
-        echo "<td>" . $row["name"] . "</td>";
-        echo "<td>" . $row["patronymic"] . "</td>";
-        echo "<td>" . $row["phone"] . "</td>";
-        echo "<td>" . $row["email"] . "</td>";
-        echo "</tr>";
-    }
-    ?>
+        <table>
+        <tr>
+            <th>id</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>Телефон</th>
+            <th>Почта</th>
+        </tr>
+        
+        <?php
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . $row["surname"] . "</td>";
+            echo "<td>" . $row["name"] . "</td>";
+            echo "<td>" . $row["patronymic"] . "</td>";
+            echo "<td>" . $row["phone"] . "</td>";
+            echo "<td>" . $row["email"] . "</td>";
+            echo "</tr>";
+        }
+        ?>
 
-    </table>
+        </table>
     <?php
     } else {
         echo "<div>В таблице нет данных.</div>";
     } 
-    ?>
+    $db->close();
+?>

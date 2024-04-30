@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <?php include_once("/navBar.php") ?>
+    <?php include_once ("/navBar.php") ?>
 
     <div class="content">
         <h1>Hello world!</h1>

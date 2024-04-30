@@ -11,23 +11,31 @@ function openPage(evt, name) {
   const elem = document.querySelector(".content");
   elem.innerHTML = "";
 
-  fetch("../pages/" + name + ".php")
-    .then(function (response) {
-      if (!response.ok) {
-        // Если статус не в диапазоне 200-299, генерируем ошибку
-        throw new Error("Network response was not ok");
-      }
-      // Преобразуем ответ в текст
-      return response.text();
-    })
-    .then(function (data) {
-      elem.innerHTML = data;
-    })
-    .catch(function (err) {
-      contentElement.innerHTML = "<p>Error loading content.</p>";
-      console.error(
-        "There has been a problem with your fetch operation:",
-        error
-      );
-    });
+  // fetch("../pages/" + name + ".php")
+  //   .then(function (response) {
+  //     if (!response.ok) {
+  //       // Если статус не в диапазоне 200-299, генерируем ошибку
+  //       throw new Error("Network response was not ok");
+  //     }
+  //     // Преобразуем ответ в текст
+  //     return response.text();
+  //   })
+  //   .then(function (data) {
+  //     elem.innerHTML = data;
+  //   })
+  //   .catch(function (err) {
+  //     contentElement.innerHTML = "<p>Error loading content.</p>";
+  //     console.error(
+  //       "There has been a problem with your fetch operation:",
+  //       error
+  //     );
+  //   });
+
+  $.get(name + ".php", function (data) {
+    // Вставляем полученный HTML в .content
+    contentElement.html(data);
+  }).fail(function () {
+    // В случае ошибки выводим сообщение
+    contentElement.html("<p>Error loading content.</p>");
+  });
 }

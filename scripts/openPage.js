@@ -11,7 +11,7 @@ function openPage(evt, name) {
   const elem = document.querySelector(".content");
   elem.innerHTML = "";
 
-  fetch("/pages/" + name + ".php")
+  fetch("../pages/" + name + ".php")
     .then(function (response) {
       console.log("Status code: ", response.status);
     })
@@ -21,6 +21,4 @@ function openPage(evt, name) {
     .catch(function (err) {
       console.log("ERROR: ", err);
     });
-
-  elem.innerHTML = "/pages/" + name + ".php";
 }

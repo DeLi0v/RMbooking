@@ -18,7 +18,6 @@
     if (mysqli_num_rows($result) > 0) { ?>
         <table>
         <tr>
-            <th>id</th>
             <th>Фамилия</th>
             <th>Имя</th>
             <th>Отчество</th>

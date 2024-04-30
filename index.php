@@ -21,7 +21,7 @@
         }
     </script>
 
-    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/jquery.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
     <script src="./js/openPage.js"></script>
 </body>

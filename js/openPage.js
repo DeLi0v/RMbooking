@@ -31,5 +31,5 @@ function openPage(evt, name) {
   //     );
   //   });
 
-  $(".content").load("url/file1.php");
+  $(".content").load("../pages/" + name + ".php");
 }

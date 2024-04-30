@@ -13,6 +13,13 @@
     <div class="content">
         <?php include_once ("./pages/booking.php") ?>
     </div>
+    <script>
+        if (window.jQuery) {
+            console.log("ok");
+        } else {
+            console.log("err");
+        }
+    </script>
 
     <!-- <script src="./js/jquery-3.7.1.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

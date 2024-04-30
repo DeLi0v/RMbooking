@@ -1,3 +1,4 @@
+<?php
 class DB_Class
 {
 // Данные для подключения к базе данных
@@ -26,3 +27,4 @@ function close()
 mysqli_close($this->conn);
 }
 }
+?>

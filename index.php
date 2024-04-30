@@ -9,7 +9,7 @@
     <?php include_once ("./navBar.php") ?>
 
     <div class="content">
-        <div class="tabcontent"></div>
+        <?php include_once ("./pages/booking.php") ?>
     </div>
 
     <script src="./scripts/openPage.js"></script>

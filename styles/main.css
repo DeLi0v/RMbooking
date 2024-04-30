@@ -9,14 +9,41 @@
 /* ////////////// */
 
 .content {
-    margin-left: 10%;
-    padding: 1px 16px;
+    /* margin-left: 10%;
+    padding: 1px 16px; */
     height: 100%;
+    float: left;
 }
 
 /* ////////////// */
 /* Navigation bar */
 /* ////////////// */
+
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    width: 130px;
+}
+
+.navBar button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+
+.navBar button:hover {
+    background-color: #000;
+}
+
+.navBar button.active {
+    background-color: #4CAF50;
+    color: white;
+}
 
 /* .navBar {
     list-style-type: none;

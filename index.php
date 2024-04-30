@@ -3,18 +3,19 @@
 
 <head>
     <?php include_once ("./mainHead.php") ?>
-    <script defer src="/js/jquery-3.7.1.js"></script>
 </head>
 
 <body>
+    <script defer src="/js/jquery-3.7.1.js"></script>
     <?php include_once ("./navBar.php") ?>
 
     <div class="content">
         <script>
-            if (window.JQuery) {
-                var vJq = jQuery.fn.jquery;
-                console.log(vJq);
-            } else { console.log("ERror"); }
+            if (window.jQuery) {
+                console.log("ok");
+            } else {
+                console.log("err");
+            }
         </script>
         <?php include_once ("./pages/booking.php") ?>
     </div>

@@ -31,11 +31,5 @@ function openPage(evt, name) {
   //     );
   //   });
 
-  $.get(name + ".php", function (data) {
-    // Вставляем полученный HTML в .content
-    contentElement.html(data);
-  }).fail(function () {
-    // В случае ошибки выводим сообщение
-    contentElement.html("<p>Error loading content.</p>");
-  });
+  $(".content").load("url/file1.php");
 }

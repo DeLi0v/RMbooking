@@ -13,8 +13,8 @@
         <?php include_once ("./pages/booking.php") ?>
     </div>
 
-    <script src="./js/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+    <!-- <script src="./js/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="./js/openPage.js"></script>
 
 </body>

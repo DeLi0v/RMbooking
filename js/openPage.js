@@ -12,9 +12,7 @@ function openPage(evt, name) {
   $.ajax({
     url: "/pages/" + name + ".php",
     type: "HEAD",
-    success: () => console.log("Файл существует"),
-    error: () => console.log("Файл не найден"),
+    success: () => elem.load("/pages/" + name + ".php"),
+    error: () => console.log("Файл '/pages/", name, ".php' не найден"),
   });
-
-  elem.load("/pages/" + name + ".php");
 }

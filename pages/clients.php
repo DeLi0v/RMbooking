@@ -9,6 +9,13 @@
     </tr>
 
     <?php
+    require_once("/connect.php"); // Подключение файла для связи с БД
+
+    // // Подключение к БД
+    $db = new DB_Class();
+    $conn = $db->connect();
+    mysqli_select_db($conn, $db->database);
+
     echo "<tr>
             <td>1</td>
             <td>2</td>

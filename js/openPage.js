@@ -8,7 +8,6 @@ function openPage(evt, name) {
   }
   evt.currentTarget.className += " active";
 
-  const elem = document.querySelector(".content");
-  elem.innerHTML = "";
+  const elem = $(".content");
   elem.load("../pages/" + name + ".php");
 }

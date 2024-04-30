@@ -1,0 +1,18 @@
+<div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Дата</th>
+            <th>ы</th>
+            <th>сууу</th>
+            <th>суууу</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+    </table>
+</div>

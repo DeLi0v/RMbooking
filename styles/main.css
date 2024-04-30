@@ -9,10 +9,8 @@
 /* ////////////// */
 
 .content {
-    /* margin-left: 10%;
-    padding: 1px 16px; */
     height: 100%;
-    float: left;
+    margin-left: 130px;
 }
 
 /* ////////////// */
@@ -21,6 +19,7 @@
 
 .navBar {
     position: fixed;
+    height: 100%;
     top: 0;
     left: 0;
     background-color: #f1f1f1;
@@ -38,6 +37,7 @@
 
 .navBar button:hover {
     background-color: #000;
+    color: white;
 }
 
 .navBar button.active {

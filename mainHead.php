@@ -4,4 +4,3 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>RMbooking</title>
 <link rel="stylesheet" href="./styles/main.css">
-<script defer src="/js/jquery-3.7.1.js"></script>

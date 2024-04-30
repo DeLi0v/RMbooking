@@ -3,6 +3,7 @@
 
 <head>
     <?php include_once ("./mainHead.php") ?>
+    <script defer src="/js/jquery-3.7.1.js"></script>
 </head>
 
 <body>

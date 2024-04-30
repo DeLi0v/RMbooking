@@ -9,12 +9,12 @@ function openPage(evt, name) {
   evt.currentTarget.className += " active";
 
   const elem = $(".content");
-  // $.ajax({
-  //   url: "file.ext",
-  //   type: "HEAD",
-  //   success: () => console.log("Файл существует"),
-  //   error: () => console.log("Файл не найден"),
-  // });
+  $.ajax({
+    url: "/pages/" + name + ".php",
+    type: "HEAD",
+    success: () => console.log("Файл существует"),
+    error: () => console.log("Файл не найден"),
+  });
 
   elem.load("/pages/" + name + ".php");
 }

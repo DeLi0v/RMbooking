@@ -11,7 +11,7 @@
 
 
 <?php
-    require_once("../connect.php");
+    require_once("connect.php");
 
     $db = new DB_Class();
     $conn = $db->connect();

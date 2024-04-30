@@ -13,8 +13,10 @@ var $conn; // подключенная БД
 function connect()
 {
 // Создаем подключение к базе данных
+// $mysqli = new mysqli($this->hostname, $this->username, $this->password, $this->database);
+// $mysqli->
 $this->conn = mysqli_connect($this->hostname, $this->username, $this->password, $this->database);
-
+$this->conn->set_charset("utf8");
 // Проверяем, удалось ли подключиться к базе данных
 if (!$this->conn) {
 die("Подключение не удалось: " . mysqli_connect_error());

@@ -45,3 +45,15 @@
     background-color: #4CAF50;
     color: white;
 }
+
+/* ////////////// */
+/*     Tables     */
+/* ////////////// */
+
+table {
+    border: 1px;
+}
+
+table tr {
+
+}

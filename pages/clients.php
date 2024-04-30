@@ -9,7 +9,7 @@
     </tr>
 
     <?php
-    require_once("/connect.php"); // Подключение файла для связи с БД
+    require_once("../connect.php"); // Подключение файла для связи с БД
 
     // // Подключение к БД
     $db = new DB_Class();

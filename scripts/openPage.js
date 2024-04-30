@@ -10,5 +10,17 @@ function openPage(evt, name) {
 
   const elem = document.querySelector(".content");
   elem.innerHTML = "";
+
+  fetch("/pages/" + name + ".php")
+    .then(function (response) {
+      console.log("Status code: ", response.status);
+    })
+    .then(function (data) {
+      elem.innerHTML = data;
+    })
+    .catch(function (err) {
+      console.log("ERROR: ", err);
+    });
+
   elem.innerHTML = "/pages/" + name + ".php";
 }

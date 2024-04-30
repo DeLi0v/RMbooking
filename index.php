@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-    <?php include_once ("mainHead.php") ?>
+    <?php include_once ("/mainHead.php") ?>
 </head>
 
 <body>

@@ -92,6 +92,9 @@ table .center {
 form {
     width: 300px; /* Ширина формы */
     margin: 0 auto; /* Центрирование формы по горизонтали */
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
 }
 
 form label {

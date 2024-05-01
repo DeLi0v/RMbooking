@@ -52,23 +52,6 @@ if ($page == "booking") {
         <label for="room">Помещение:
             <select name="room" id="room" disabled>
                 <option value="">--Помещение не выбрано--</option>
-                
-                <?php 
-                    $sql = "SELECT
-                                id AS id,
-                                name AS name,
-                                description AS description,
-                                address AS address,
-                                cost AS cost
-                            FROM Rooms";
-                    
-                    $result = mysqli_query($conn, $sql);
-                    if (mysqli_num_rows($result) > 0) { 
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<option value='". $row['id'] ."'>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
-                        }
-                    }
-                ?>
             </select>
         </label>
         <label for="booking_date">Дата бронирования:
@@ -123,12 +106,26 @@ if ($page == "booking") {
         });
 
         $("#typeRoom").on("change", function() {
-            if ($(this).val() !== "") {
+            var selectedType = $(this).val();
+            if (selectedType !== "") {
                 $("#room").prop("disabled", false).val("");
                 $("#booking_date").prop("disabled", true).val("");
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
+
+                $.ajax({
+                    url: "/components/get_rooms.php",
+                    method: "POST",
+                    data: { type: selectedType },
+                    success: function(response) {
+                        $("#room").html(response).prop("disabled", false);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Ошибка получения списка помещений:", error);
+                    }
+                });
+
             } else {
                 $("#room").prop("disabled", true).val("");
                 $("#booking_date").prop("disabled", true).val("");

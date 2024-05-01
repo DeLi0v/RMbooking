@@ -16,3 +16,7 @@ function openPage(evt, name) {
     error: () => console.log("Файл '/pages/", name, ".php' не найден"),
   });
 }
+
+function deleteStr(evt, id) {
+  console.log(id);
+}

@@ -108,6 +108,10 @@ form input {
     box-sizing: border-box; /* Учет границы в расчете размера */
 }
 
+form label div {
+    display: flex;
+}
+
 form button {
     width: 100%; /* Ширина кнопки по всей доступной ширине */
     padding: 10px; /* Внутренний отступ */

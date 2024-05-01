@@ -142,8 +142,10 @@ if ($page == 'booking') { ?>
         </label>
         <label for="sex">
             Пол:
-            <input type="radio" name="sex" value="М" required <?php if ($row["sex"] === "М") echo "checked"; ?>>
-            <input type="radio" name="sex" value="Ж" required <?php if ($row["sex"] === "Ж") echo "checked"; ?>>
+            <div>
+                <input type="radio" name="sex" value="М" required <?php if ($row["sex"] === "М") echo "checked"; ?>>Мужской
+                <input type="radio" name="sex" value="Ж" required <?php if ($row["sex"] === "Ж") echo "checked"; ?>>Женский
+            </div>
         </label>
         <label for="passport">
             Паспорт:

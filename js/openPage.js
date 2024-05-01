@@ -63,25 +63,16 @@ function cancelEdit(evt, page) {
 function saveEdit(evt, page, id) {
   evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
 
-  // Проверяем валидность формы
-  var form = $("#editForm");
-  if (!form.checkValidity()) {
-    // Находим все обязательные поля формы
-    var requiredFields = $("#editForm [required]");
-
-    // Проходимся по каждому обязательному полю
-    requiredFields.each(function () {
-      // Проверяем, заполнено ли поле
-      if (!$(this).val()) {
-        // Если поле не заполнено, подсвечиваем его
-        $(this).addClass("highlight");
-      } else {
-        // Если поле заполнено, удаляем подсветку (если она была)
-        $(this).removeClass("highlight");
-      }
-    });
-    return;
-  }
+  // Проверяем валидность всех обязательных полей
+  $("#editForm [required]").each(function () {
+    if (!$(this).val()) {
+      // Если поле не заполнено, добавляем класс для подсветки
+      $(this).addClass("highlight");
+    } else {
+      // Если поле заполнено, удаляем класс подсветки (если был добавлен)
+      $(this).removeClass("highlight");
+    }
+  });
 
   var formData = form.serialize();
 

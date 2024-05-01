@@ -165,7 +165,7 @@ if ($page == 'booking') { ?>
 $db->close();?>
 <script>
 // Удаляем подсветку при начале ввода в обязательных полях
-  $("#editForm [required]").on("input", function() {
+  $("#editForm [required]").on("focus", function() {
     $(this).removeClass("highlight");
   });
 </script>

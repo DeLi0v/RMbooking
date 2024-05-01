@@ -5,10 +5,6 @@
     font-size: large;
 }
 
-/* ////////////// */
-/*  Main content  */
-/* ////////////// */
-
 .content {
     height: 100%;
     margin-left: 130px;
@@ -83,6 +79,24 @@ table input {
 
 table .center {
     text-align: center;
+}
+
+/* ////////////// */
+/*       Add      */
+/* ////////////// */
+
+button {
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 16px; /* Размер шрифта */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границу */
+    border-radius: 4px; /* Скругляем углы */
+    cursor: pointer; /* Изменяем курсор при наведении */
+}
+
+button:hover {
+    background-color: #0056b3; /* Цвет фона кнопки при наведении */
 }
 
 /* ////////////// */

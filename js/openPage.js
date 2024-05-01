@@ -17,9 +17,12 @@ function openPage(evt, name) {
   });
 }
 
-function deleteStr(evt, id, page) {
-  console.log("Delete: ", id);
+function addStr(evt, page) {
+  evt.preventDefault();
+  console.log("click");
+}
 
+function deleteStr(evt, id, page) {
   evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
 
   // Отправляем AJAX запрос на сервер для удаления строки
@@ -37,8 +40,6 @@ function deleteStr(evt, id, page) {
 }
 
 function editStr(evt, id, page) {
-  console.log("Edit: ", id);
-
   const elem = $(".content");
   var params = {
     id: id,

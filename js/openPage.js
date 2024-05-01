@@ -69,7 +69,7 @@ function deleteStr(evt, id, page) {
 
   // Отправляем AJAX запрос на сервер для удаления строки
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "/pages/delete.php", false);
+  xhr.open("POST", "/components/delete.php", false);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onload = function () {
     if (xhr.status === 200) {

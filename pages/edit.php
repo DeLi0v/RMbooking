@@ -43,6 +43,9 @@ if ($page == 'booking') { ?>
         <label for="phone">
             Телефон:
             <input type="tel" name="phone" required value="<?php echo $row["phone"] ?>" />
+            <script>
+                $('input[name="phone"]').eq(0).mask('+7 (999) 999-99-99', {placeholder: "+7 (999) 999-99-99" });
+            </script>
         </label>
         <label for="email">
             Почта:

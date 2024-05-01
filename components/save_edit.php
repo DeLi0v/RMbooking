@@ -14,7 +14,7 @@
 
     echo "$id <br>";
     echo "$table <br>";
-    echo "$formDataArr <br>";
+    echo $formDataArr['surname'];
 
     if ($table = 'Booking') {
         // $sql = "UPDATE Booking
@@ -59,6 +59,8 @@
         //     storage = '$storage',
         //     price = '$price'
         // WHERE (id = $id)";
+    } else{
+        echo "hueta virubay";
     }
 
     // Выполняем SQL запрос

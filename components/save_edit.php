@@ -24,13 +24,13 @@
         // WHERE (id = $id)";
     } elseif ($table = 'Clients') {
         $sql = "UPDATE 
-        SET 
-            surname     = '$formDataArr[surname]',
-            name        = '$formDataArr[name]',
-            patronymic  = '$formDataArr[patronymic]',
-            phone       = '$formDataArr[phone]',
-            email       = '$formDataArr[email]'
-        WHERE (id = $id)";
+                SET 
+                    surname     = '".$formDataArr['surname']."',
+                    name        = '".$formDataArr['name']."',
+                    patronymic  = '".$formDataArr['patronymic']."',
+                    phone       = '".$formDataArr['phone']."',
+                    email       = '".$formDataArr['email']."'
+                WHERE (id = $id)";
     } elseif ($table = 'Staff') {
         // $sql = "UPDATE 
         // SET 

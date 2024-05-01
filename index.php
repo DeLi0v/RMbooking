@@ -18,6 +18,8 @@
     <!-- <script src="/js/jquery.min.js"></script> -->
     <!-- <script src="/js/jquery-3.7.1.slim.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script> -->
+    <script src="/js/jquery-mask.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script> -->
     <script src="/js/openPage.js"></script>
 

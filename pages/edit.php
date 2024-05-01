@@ -137,7 +137,7 @@ if ($page == 'booking') { ?>
         <label for="passport">
             Паспорт:
             <input type="text" name="passport" required value="<?php echo $row["passport"] ?>" />
-            <script>$('input[name="passport"]').mask('9999 999999');</script>
+            <script>$('input[name="passport"]').eq(0).mask('9999 999999');</script>
         </label>
         <label for="phone">
             Телефон:
@@ -152,7 +152,7 @@ if ($page == 'booking') { ?>
             <input type="text" name="post" required value="<?php echo $row["post"] ?>" />
         </label>
         <button class="cancel" onclick="cancelEdit(event,'<?php echo $page ?>')">Отменить</button>
-        <button class="save" onclick="saveEdit(event,'<?php echo $page ?>', '<?php echo $id ?>')">Сохранить</button>
+        <button class="save" type="submit" onclick="saveEdit(event,'<?php echo $page ?>', '<?php echo $id ?>')">Сохранить</button>
     </form>
 <?php } else { ?>
     <div>Page not found</div>

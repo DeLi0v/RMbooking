@@ -24,7 +24,8 @@
             <th>Отчество</th>
             <th>Телефон</th>
             <th>Почта</th>
-            <th style="width: 100%">Удалить</th>
+            <th style="width: 0">Изменить</th>
+            <th style="width: 0">Удалить</th>
         </tr>
         
         <?php
@@ -35,6 +36,7 @@
             echo "<td>" . $row["patronymic"] . "</td>";
             echo "<td>" . $row["phone"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
+            echo '<td class="center"><input type="image" src="/pictures/edit_orange.png" value="' . $row["id"] . '"></input></td>';
             echo '<td class="center"><input type="image" src="/pictures/remove.png" value="' . $row["id"] . '"></input></td>';
             echo "</tr>";
         }

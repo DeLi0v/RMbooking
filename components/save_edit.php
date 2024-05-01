@@ -30,7 +30,7 @@
                     patronymic  = '".$formDataArr['patronymic']."',
                     phone       = '".$formDataArr['phone']."',
                     email       = '".$formDataArr['email']."'
-                WHERE (id = $id)";
+                WHERE (id = $id);";
     } elseif ($table = 'Staff') {
         // $sql = "UPDATE 
         // SET 

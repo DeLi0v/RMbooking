@@ -23,13 +23,19 @@
         //     price = '$price'
         // WHERE (id = $id)";
     } elseif ($table = 'Clients') {
+        $surname    = $formDataArr['surname'];
+        $name       = $formDataArr['name'];
+        $patronymic = $formDataArr['patronymic'];
+        $phone      = $formDataArr['phone'];
+        $email      = $formDataArr['email'];
+
         $sql = "UPDATE Clients 
                 SET 
-                    surname     = '".$formDataArr['surname']."',
-                    name        = '".$formDataArr['name']."',
-                    patronymic  = '".$formDataArr['patronymic']."',
-                    phone       = '".$formDataArr['phone']."',
-                    email       = '".$formDataArr['email']."'
+                    surname     = '$surname',
+                    name        = '$name',
+                    patronymic  = '$patronymic',
+                    phone       = '$phone',
+                    email       = '$email'
                 WHERE (id = $id);";
     } elseif ($table = 'Staff') {
         // $sql = "UPDATE 

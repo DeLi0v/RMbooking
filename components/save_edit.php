@@ -40,7 +40,7 @@
                     patronymic  = '$patronymic',
                     phone       = '$phone',
                     email       = '$email'
-                WHERE (id = $id);";
+                WHERE id = $id";
     } elseif ($table = 'Staff') {
         // $sql = "UPDATE 
         // SET 

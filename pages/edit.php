@@ -137,6 +137,7 @@ if ($page == 'booking') { ?>
         <label for="passport">
             Паспорт:
             <input type="text" name="passport" required value="<?php echo $row["passport"] ?>" />
+            <script>$('input[name="passport"]').mask('9999 999999');</script>
         </label>
         <label for="phone">
             Телефон:

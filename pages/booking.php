@@ -1,3 +1,5 @@
+<button>Добавить</button>
+
 <?php
     require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");
 

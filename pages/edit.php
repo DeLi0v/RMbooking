@@ -132,7 +132,7 @@ if ($page == 'booking') { ?>
         </label>
         <label for="birthday">
             День рождения:
-            <input type="date" name="birthday" required value="<?php echo $row["birthday"] ?>" />
+            <input type="date" name="birthday" value="<?php echo $row["birthday"] ?>" />
         </label>
         <label for="passport">
             Паспорт:

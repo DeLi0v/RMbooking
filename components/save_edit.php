@@ -29,7 +29,7 @@
         $phone      = $formDataArr['phone'];
         $email      = $formDataArr['email'];
 
-        $sql += "UPDATE Clients 
+        $sql = "UPDATE Clients 
                 SET 
                     surname     = '$surname',
                     name        = '$name',

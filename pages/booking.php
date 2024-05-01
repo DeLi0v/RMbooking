@@ -52,7 +52,7 @@
         </table>
     <?php
     } else {
-        echo "<div>В таблице нет данных.</div>";
+        echo "<div class='noData'>В таблице нет данных.</div>";
     } 
     $db->close();
 ?>

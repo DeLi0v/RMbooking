@@ -82,6 +82,11 @@ table .center {
     text-align: center;
 }
 
+.noData {
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
 /* ////////////// */
 /*       Add      */
 /* ////////////// */

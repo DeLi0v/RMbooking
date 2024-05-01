@@ -12,8 +12,7 @@
     $formData = $_POST['formData'];
     parse_str($formData, $formDataArr);
 
-    $sql = "";
-    if ($table = 'Booking') {
+    if ($table == 'Booking') {
         // $sql = "UPDATE Booking
         // SET 
         //     idCategory = '$category',
@@ -22,7 +21,7 @@
         //     storage = '$storage',
         //     price = '$price'
         // WHERE (id = $id)";
-    } elseif ($table = 'Clients') {
+    } elseif ($table == 'Clients') {
 
         $surname    = $formDataArr['surname'];
         $name       = $formDataArr['name'];
@@ -30,7 +29,7 @@
         $phone      = $formDataArr['phone'];
         $email      = $formDataArr['email'];
 
-        $sql = "UPDATE Clients 
+        $sql += "UPDATE Clients 
                 SET 
                     surname     = '$surname',
                     name        = '$name',
@@ -38,7 +37,7 @@
                     phone       = '$phone',
                     email       = '$email'
                 WHERE id = $id";
-    } elseif ($table = 'Staff') {
+    } elseif ($table == 'Staff') {
         // $sql = "UPDATE 
         // SET 
         //     idCategory = '$category',
@@ -47,7 +46,7 @@
         //     storage = '$storage',
         //     price = '$price'
         // WHERE (id = $id)";
-    } elseif ($table = 'Rooms') {
+    } elseif ($table == 'Rooms') {
         // $sql = "UPDATE 
         // SET 
         //     idCategory = '$category',
@@ -56,12 +55,9 @@
         //     storage = '$storage',
         //     price = '$price'
         // WHERE (id = $id)";
-    } else{
-        echo "hueta virubay";
     }
 
     // Выполняем SQL запрос
-    echo $sql;
     $result = mysqli_query($conn, $sql);
 
     // Закрываем соединение с базой данных
@@ -71,7 +67,6 @@
     if ($result) {
         http_response_code(200);
     } else {
-    // http_response_code(404);
-        // http_response_code(500);
+        http_response_code(500);
     }    
 ?>

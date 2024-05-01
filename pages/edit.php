@@ -49,7 +49,7 @@ if ($page == 'booking') { ?>
             <input type="email" name="email" required value="<?php echo $row["email"] ?>" />
         </label>
         <button class="cancel" onclick="cancelEdit(event,'<?php echo $page ?>')">Отменить</button>
-        <button class="save" onclick="saveEdit(event,'<?php echo '$page , $id' ?>')">Сохранить</button>
+        <button class="save" onclick="saveEdit(event,'<?php echo $page ?>', '<?php echo $id ?>')">Сохранить</button>
     </form>
 <?php } elseif ($page == 'rooms') { ?>
 

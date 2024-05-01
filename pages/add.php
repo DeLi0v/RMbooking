@@ -11,7 +11,7 @@ if ($page == "booking") {
 
     <form id="editForm">
         <label for="staff">Сотрудник:
-            <select name="staff">
+            <select name="staff" id="staff">
                 <option value="">--Сотрудник не выбран--</option>
                 
                 <?php 
@@ -32,7 +32,7 @@ if ($page == "booking") {
             </select>
         </label>
         <label for="typeRoom">Тип помещения:
-            <select name="typeRoom">
+            <select name="typeRoom" id="typeRoom" disabled >
                 <option value="">--Тип помещения не выбран--</option>
                 
                 <?php 
@@ -50,7 +50,7 @@ if ($page == "booking") {
             </select>
         </label>
         <label for="room">Помещение:
-            <select name="room">
+            <select name="room" id="room" disabled>
                 <option value="">--Помещение не выбрано--</option>
                 
                 <?php 
@@ -65,25 +65,89 @@ if ($page == "booking") {
                     $result = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($result) > 0) { 
                         while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<option value='". $row['id'] ."'>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ."</option>";
+                            echo "<option value='". $row['id'] ."'>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
                         }
                     }
                 ?>
             </select>
         </label>
         <label for="booking_date">Дата бронирования:
-            <input type="date" name="booking_date" />
+            <input type="date" name="booking_date" id="booking_date" disabled />
         </label>
         <label for="booking_time_begin">Время начала бронирования:
-            <input type="time" name="booking_time_begin" />
+            <input type="time" name="booking_time_begin" id="booking_time_begin" disabled />
         </label>
         <label for="booking_time_end">Время окончания бронирования:
-            <input type="time" name="booking_time_end" />
+            <input type="time" name="booking_time_end" id="booking_time_end" disabled />
         </label>
         <label for="sum">Сумма:
-            <input type="text" name="sum" />
+            <input type="text" name="sum" id="sum" disabled />
         </label>
     </form>
+    <script>
+        $("#staff").on("change", function() {
+            if ($(this).val() !== "") {
+                $("#typeRoom").prop("disabled", false);
+            } else {
+                $("#typeRoom").prop("disabled", true);
+                $("#room").prop("disabled", true);
+                $("#booking_date").prop("disabled", true);
+                $("#booking_time_begin").prop("disabled", true);
+                $("#booking_time_end").prop("disabled", true);
+                $("#sum").prop("disabled", true);
+            }
+        });
+
+        $("#typeRoom").on("change", function() {
+            if ($(this).val() !== "") {
+                $("#room").prop("disabled", false);
+            } else {
+                $("#room").prop("disabled", true).val("");
+                $("#booking_date").val("");
+                $("#booking_time_begin").prop("disabled", true).val("");
+                $("#booking_time_end").prop("disabled", true).val("");
+                $("#sum").prop("disabled", true).val("");
+            }
+        });
+
+        $("#room").on("change", function() {
+            if ($(this).val() !== "") {
+                $("#booking_date").prop("disabled", false);
+            } else {
+                $("#booking_date").val("");
+                $("#booking_time_begin").prop("disabled", true).val("");
+                $("#booking_time_end").prop("disabled", true).val("");
+                $("#sum").prop("disabled", true).val("");
+            }
+        });
+
+        $("#booking_date").on("change", function() {
+            if ($(this).val() !== "") {
+                $("#booking_time_begin").prop("disabled", false);
+            } else {
+                $("#booking_time_begin").prop("disabled", true).val("");
+                $("#booking_time_end").prop("disabled", true).val("");
+                $("#sum").prop("disabled", true).val("");
+            }
+        });
+
+        $("#booking_time_begin").on("change", function() {
+            if ($(this).val() !== "") {
+                $("#booking_time_end").prop("disabled", false);
+            } else {
+                $("#booking_time_end").prop("disabled", true).val("");
+                $("#sum").prop("disabled", true).val("");
+            }
+        });
+
+        $("#booking_time_end").on("change", function() {
+            if ($(this).val() !== "") {
+                $("#sum").prop("disabled", false);
+            } else {
+                $("#sum").prop("disabled", true).val("");
+            }
+        });
+    </script>
 <?php $db->close(); 
 } elseif ($page == "clients") { ?>
     <form id="editForm">

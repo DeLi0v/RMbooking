@@ -50,7 +50,7 @@
 table {
     border: 1px solid #eee;
 	width: 100%;
-    margin-top: 10px;
+    margin-top: 5px;
 	margin-bottom: 20px;
     border-collapse: collapse;
 }
@@ -94,6 +94,8 @@ table .center {
     border: none; /* Убираем границу */
     border-radius: 4px; /* Скругляем углы */
     cursor: pointer; /* Изменяем курсор при наведении */
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .addBtn:hover {

@@ -70,6 +70,7 @@ function saveEdit(evt, page, id) {
     type: "POST",
     data: { page: page, id: id, formData: formData },
     success: function (response) {
+      console.log(formData);
       const elem = $(".content");
       // elem.load("/pages/" + page + ".php");
     },

@@ -80,3 +80,7 @@ table tbody tr:nth-child(even){
 table input {
     max-height: 25px;
 }
+
+table .center {
+    text-align: center;
+}

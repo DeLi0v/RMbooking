@@ -35,7 +35,7 @@
             echo "<td>" . $row["patronymic"] . "</td>";
             echo "<td>" . $row["phone"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
-            echo '<td><input class="delete_edit" type="image" src="/pictures/remove.png" value="' . $row["id"] . '"></input></td>';
+            echo '<td class="center"><input type="image" src="/pictures/remove.png" value="' . $row["id"] . '"></input></td>';
             echo "</tr>";
         }
         ?>

@@ -7,12 +7,11 @@
     mysqli_select_db($conn, $db->database);
 
     // Получаем данные из POST запроса
-    $id = ucfirst($_POST['id']);
+    $id = $_POST['id'];
     $table = ucfirst($_POST['page']);
     $formData = $_POST['formData'];
     parse_str($formData, $formDataArr);
 
-    // Пишем SQL запрос для удаления строки из базы данных
     if ($table = 'Booking') {
         // $sql = "UPDATE Booking
         // SET 
@@ -23,12 +22,23 @@
         //     price = '$price'
         // WHERE (id = $id)";
     } elseif ($table = 'Clients') {
+        ?> 
+        <script>console.log("we here"); </script>
+        <?php
         $surname    = $formDataArr['surname'];
         $name       = $formDataArr['name'];
         $patronymic = $formDataArr['patronymic'];
         $phone      = $formDataArr['phone'];
         $email      = $formDataArr['email'];
-
+        ?> 
+        <script>
+            console.log(<?php echo $surname ?>);
+            console.log(<?php echo $name ?>);
+            console.log(<?php echo $patronymic ?>);
+            console.log(<?php echo $phone ?>);
+            console.log(<?php echo $email ?>);
+        </script>
+        <?php
         $sql = "UPDATE Clients 
                 SET 
                     surname     = '$surname',
@@ -67,6 +77,7 @@
     if ($result) {
         http_response_code(200);
     } else {
+    // http_response_code(404);
         http_response_code(500);
     }    
 ?>

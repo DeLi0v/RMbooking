@@ -71,7 +71,7 @@ function saveEdit(evt, page, id) {
     data: { page: page, id: id, formData: formData },
     success: function (response) {
       const elem = $(".content");
-      elem.load("/pages/" + page + ".php");
+      // elem.load("/pages/" + page + ".php");
     },
     error: function (xhr, status, error) {
       console.error("Ошибка сохранения:", error);

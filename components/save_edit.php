@@ -12,6 +12,14 @@
     $formData = $_POST['formData'];
     parse_str($formData, $formDataArr);
 
+    ?> 
+    <script>
+        console.log("we here");
+        console.log("<?php $id?>");
+        console.log("<?php $table?>");
+    </script>
+    <?php
+
     if ($table = 'Booking') {
         // $sql = "UPDATE Booking
         // SET 
@@ -32,11 +40,11 @@
         $email      = $formDataArr['email'];
         ?> 
         <script>
-            console.log(<?php echo $surname ?>);
-            console.log(<?php echo $name ?>);
-            console.log(<?php echo $patronymic ?>);
-            console.log(<?php echo $phone ?>);
-            console.log(<?php echo $email ?>);
+            console.log("<?php echo $surname ?>");
+            console.log("<?php echo $name ?>");
+            console.log("<?php echo $patronymic ?>");
+            console.log("<?php echo $phone ?>");
+            console.log("<?php echo $email ?>");
         </script>
         <?php
         $sql = "UPDATE Clients 

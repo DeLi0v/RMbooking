@@ -19,7 +19,49 @@ function openPage(evt, name) {
 
 function addStr(evt, page) {
   evt.preventDefault();
-  console.log("click");
+
+  const elem = $(".content");
+  var params = {
+    page: page,
+  };
+
+  elem.load("/pages/add.php", params);
+}
+
+function createStr(evt, page) {
+  evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
+
+  // Проверяем валидность всех обязательных полей
+  var valid = true;
+  $("#editForm [required]").each(function () {
+    if (!$(this).val()) {
+      // Если поле не заполнено, добавляем класс для подсветки
+      $(this).addClass("highlight");
+      valid = false;
+    } else {
+      // Если поле заполнено, удаляем класс подсветки (если был добавлен)
+      $(this).removeClass("highlight");
+    }
+  });
+
+  if (!valid) {
+    return;
+  }
+
+  var formData = $("#editForm").serialize();
+
+  $.ajax({
+    url: "/components/create.php", // Файл на сервере для обработки данных
+    type: "POST",
+    data: { page: page, formData: formData },
+    success: function (response) {
+      const elem = $(".content");
+      elem.load("/pages/" + page + ".php");
+    },
+    error: function (xhr, status, error) {
+      console.error("Ошибка сохранения:", error);
+    },
+  });
 }
 
 function deleteStr(evt, id, page) {

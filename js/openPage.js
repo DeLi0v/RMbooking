@@ -41,8 +41,8 @@ function editStr(evt, id, page) {
 
   const elem = $(".content");
   var params = {
-    p1: id,
-    p2: page,
+    p1: "id",
+    p2: "page",
   };
 
   elem.load("/pages/edit.php", params);

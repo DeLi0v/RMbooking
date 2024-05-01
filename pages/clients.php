@@ -35,7 +35,7 @@
             echo "<td>" . $row["patronymic"] . "</td>";
             echo "<td>" . $row["phone"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
-            echo '<button value="' . $row["id"] . '"></button>';
+            echo '<td><button value="' . $row["id"] . '"></button></td>';
             echo "</tr>";
         }
         ?>

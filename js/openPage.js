@@ -64,13 +64,13 @@ function saveEdit(evt, page, id) {
   evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
 
   // Проверяем валидность формы
-  var form = document.getElementById("editForm");
+  var form = $("#editForm");
   if (!form.checkValidity()) {
     // Если форма не прошла валидацию, выходим из функции
     return;
   }
 
-  var formData = $("#editForm").serialize();
+  var formData = form.serialize();
 
   $.ajax({
     url: "/components/save_edit.php", // Файл на сервере для обработки данных

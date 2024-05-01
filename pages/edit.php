@@ -163,3 +163,29 @@ if ($page == 'booking') { ?>
     <div>Page not found</div>
 <?php } 
 $db->close();?>
+<script>
+// Получаем все обязательные поля формы
+var requiredFields = document.querySelectorAll("#editForm [required]");
+
+// Добавляем обработчик события invalid для каждого обязательного поля
+requiredFields.forEach(function(field) {
+  field.addEventListener("invalid", function() {
+    // Отображаем пользователю сообщение об ошибке
+    var errorMessage = field.validationMessage;
+    var errorElement = document.createElement("div");
+    errorElement.classList.add("error-message");
+    errorElement.textContent = errorMessage;
+    field.parentNode.appendChild(errorElement);
+  });
+});
+
+// Добавляем обработчик события input для каждого обязательного поля, чтобы скрыть сообщение об ошибке при вводе
+requiredFields.forEach(function(field) {
+  field.addEventListener("input", function() {
+    var errorElement = field.parentNode.querySelector(".error-message");
+    if (errorElement) {
+      errorElement.remove();
+    }
+  });
+});
+</script>

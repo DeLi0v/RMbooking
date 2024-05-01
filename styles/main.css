@@ -180,6 +180,7 @@ form .save {
 
 form .save:disabled {
     opacity: 0.5;
+    cursor: default;
 }
 
 form button:hover {

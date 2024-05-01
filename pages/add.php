@@ -10,7 +10,16 @@ mysqli_select_db($conn, $db->database);
 
 if ($page == "booking") { ?>
     <form id="editForm">
-        
+        <label for="surname">Фамилия:</label>
+        <select name="pets" id="pet-select">
+            <option value="">--Please choose an option--</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster">Hamster</option>
+            <option value="parrot">Parrot</option>
+            <option value="spider">Spider</option>
+            <option value="goldfish">Goldfish</option>
+        </select>
     </form>
 <?php } elseif ($page == "clients") { ?>
     <form id="editForm">

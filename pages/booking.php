@@ -7,8 +7,8 @@
     $conn = $db->connect();
     mysqli_select_db($conn, $db->database);
 
-    $sql = "SELECT 
-                Booking.id AS id
+    $sql = "SELECT
+                Booking.id AS id,
                 Rooms.name AS room,
                 Clients.surname AS clientSurname,
                 Clients.name AS clientName,

@@ -12,13 +12,9 @@
     $formData = $_POST['formData'];
     parse_str($formData, $formDataArr);
 
-    ?> 
-    <script>
-        console.log("we here");
-        console.log("<?php $id?>");
-        console.log("<?php $table?>");
-    </script>
-    <?php
+    echo "$id <br>";
+    echo "$table <br>";
+    echo "$formData";
 
     if ($table = 'Booking') {
         // $sql = "UPDATE Booking
@@ -30,23 +26,13 @@
         //     price = '$price'
         // WHERE (id = $id)";
     } elseif ($table = 'Clients') {
-        ?> 
-        <script>console.log("we here"); </script>
-        <?php
+
         $surname    = $formDataArr['surname'];
         $name       = $formDataArr['name'];
         $patronymic = $formDataArr['patronymic'];
         $phone      = $formDataArr['phone'];
         $email      = $formDataArr['email'];
-        ?> 
-        <script>
-            console.log("<?php echo $surname ?>");
-            console.log("<?php echo $name ?>");
-            console.log("<?php echo $patronymic ?>");
-            console.log("<?php echo $phone ?>");
-            console.log("<?php echo $email ?>");
-        </script>
-        <?php
+
         $sql = "UPDATE Clients 
                 SET 
                     surname     = '$surname',

@@ -62,6 +62,7 @@ function createStr(evt, page) {
   //     console.error("Ошибка сохранения:", error);
   //   },
   // });
+  const elem = $(".content");
   elem.load("/components/create.php", { page: page, formData: formData });
 }
 

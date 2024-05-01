@@ -84,7 +84,7 @@ if ($page == "booking") {
             <input type="text" name="sum" id="sum" disabled />
         </label>
         <button class="cancel" onclick="cancelEdit(event,'<?php echo $page ?>')">Отменить</button>
-        <button class="save" id="create" onclick="createStr(event,'<?php echo $page ?>')">Создать</button>
+        <button class="save" id="create" onclick="createStr(event,'<?php echo $page ?>')" disabled>Создать</button>
     </form>
     <script>
 
@@ -118,6 +118,7 @@ if ($page == "booking") {
                 $("#booking_time_begin").prop("disabled", true);
                 $("#booking_time_end").prop("disabled", true);
                 $("#sum").prop("disabled", true);
+                $("#create").prop("disabled", true);
             }
         });
 
@@ -134,6 +135,7 @@ if ($page == "booking") {
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
+                $("#create").prop("disabled", true);
             }
         });
 
@@ -148,6 +150,7 @@ if ($page == "booking") {
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
+                $("#create").prop("disabled", true);
             }
         });
 
@@ -160,6 +163,7 @@ if ($page == "booking") {
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
+                $("#create").prop("disabled", true);
             }
         });
 
@@ -170,6 +174,7 @@ if ($page == "booking") {
             } else {
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
+                $("#create").prop("disabled", true);
             }
         });
 

@@ -63,6 +63,13 @@ function cancelEdit(evt, page) {
 function saveEdit(evt, page, id) {
   evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
 
+  // Проверяем валидность формы
+  var form = document.getElementById("editForm");
+  if (!form.checkValidity()) {
+    // Если форма не прошла валидацию, выходим из функции
+    return;
+  }
+
   var formData = $("#editForm").serialize();
 
   $.ajax({
@@ -70,7 +77,6 @@ function saveEdit(evt, page, id) {
     type: "POST",
     data: { page: page, id: id, formData: formData },
     success: function (response) {
-      console.log(formData);
       const elem = $(".content");
       elem.load("/pages/" + page + ".php");
     },

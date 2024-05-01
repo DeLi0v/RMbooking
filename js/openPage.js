@@ -39,8 +39,11 @@ function deleteStr(evt, id, page) {
 function editStr(evt, id, page) {
   console.log("Edit: ", id);
 
-  $.ajax({
-    url: "/pages/edit.php",
-    type: "POST",
-  });
+  const elem = $(".content");
+  var params = {
+    id: id,
+    page: page,
+  };
+
+  elem.load("/pages/edit.php", params);
 }

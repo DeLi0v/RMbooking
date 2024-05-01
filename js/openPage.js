@@ -17,6 +17,7 @@ function openPage(evt, name) {
   });
 
   if (document.getElementById("editForm")) {
+    console.log("set invalid");
     // Получаем все обязательные поля формы
     var requiredFields = document.querySelectorAll("#editForm [required]");
 

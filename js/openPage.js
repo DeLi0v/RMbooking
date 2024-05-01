@@ -74,7 +74,7 @@ function saveEdit(evt, page, id) {
     }
   });
 
-  var formData = form.serialize();
+  var formData = $("#editForm").serialize();
 
   $.ajax({
     url: "/components/save_edit.php", // Файл на сервере для обработки данных

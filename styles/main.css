@@ -133,6 +133,15 @@ form input {
     box-sizing: border-box; /* Учет границы в расчете размера */
 }
 
+form select {
+    width: 100%; /* Ширина инпутов по всей доступной ширине */
+    padding: 8px; /* Внутренний отступ */
+    margin-top: 4px; /* Отступ от предыдущего элемента */
+    border: 1px solid #ccc; /* Граница инпутов */
+    border-radius: 4px; /* Скругление углов */
+    box-sizing: border-box; /* Учет границы в расчете размера */
+}
+
 form .sex {
     display: flex; 
     align-items: baseline;

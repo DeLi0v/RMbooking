@@ -12,7 +12,7 @@ if ($page == "booking") {
     <form id="editForm">
         <label for="staff">Сотрудник:
             <select name="staff">
-                <option disabled>--Сотрудник не выбран--</option>
+                <option value="">--Сотрудник не выбран--</option>
                 
                 <?php 
                     $sql = "SELECT 
@@ -33,7 +33,7 @@ if ($page == "booking") {
         </label>
         <label for="typeRoom">Тип помещения:
             <select name="typeRoom">
-                <option disabled>--Тип помещения не выбран--</option>
+                <option value="">--Тип помещения не выбран--</option>
                 
                 <?php 
                     $sql = "SELECT DISTINCT
@@ -51,7 +51,7 @@ if ($page == "booking") {
         </label>
         <label for="room">Помещение:
             <select name="room">
-                <option disabled>--Помещение не выбрано--</option>
+                <option value="">--Помещение не выбрано--</option>
                 
                 <?php 
                     $sql = "SELECT

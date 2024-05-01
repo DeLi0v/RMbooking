@@ -150,3 +150,8 @@ form .save {
 form button:hover {
     opacity: 0.8; /* Уменьшение прозрачности кнопки при наведении */
 }
+
+.invalid-input {
+    border-color: red; /* Цвет границы поля */
+    box-shadow: 0 0 5px red; /* Тень поля */
+  }

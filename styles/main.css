@@ -84,3 +84,41 @@ table input {
 table .center {
     text-align: center;
 }
+
+/* ////////////// */
+/*      Forms     */
+/* ////////////// */
+
+form {
+    width: 300px; /* Ширина формы */
+    margin: 0 auto; /* Центрирование формы по горизонтали */
+}
+
+form label {
+    display: block; /* Каждая метка на новой строке */
+    margin-bottom: 10px; /* Отступ между метками */
+}
+
+form input {
+    width: 100%; /* Ширина инпутов по всей доступной ширине */
+    padding: 8px; /* Внутренний отступ */
+    margin-top: 4px; /* Отступ от предыдущего элемента */
+    border: 1px solid #ccc; /* Граница инпутов */
+    border-radius: 4px; /* Скругление углов */
+    box-sizing: border-box; /* Учет границы в расчете размера */
+}
+
+form button {
+    width: 100%; /* Ширина кнопки по всей доступной ширине */
+    padding: 10px; /* Внутренний отступ */
+    margin-top: 10px; /* Отступ от предыдущего элемента */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    border: none; /* Удаление границы */
+    border-radius: 4px; /* Скругление углов */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+form button:hover {
+    background-color: #0056b3; /* Изменение цвета фона кнопки при наведении */
+}

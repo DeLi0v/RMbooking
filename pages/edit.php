@@ -28,23 +28,23 @@ if ($page == 'booking') { ?>
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result); ?>
     <form>
-        <label>
+        <label for="surname">
             Фамилия:
             <input type="text" name="surname" required value="<?php echo $row["surname"] ?>" />
         </label>
-        <label>
+        <label for="name">
             Имя:
             <input type="text" name="name" required value="<?php echo $row["name"] ?>" />
         </label>
-        <label>
+        <label for="patronymic">
             Отчество:
             <input type="text" name="patronymic" value="<?php echo $row["patronymic"] ?>" />
         </label>
-        <label>
+        <label for="phone">
             Телефон:
             <input type="tel" name="phone" required value="<?php echo $row["phone"] ?>" />
         </label>
-        <label>
+        <label for="email">
             Почта:
             <input type="email" name="email" required value="<?php echo $row["email"] ?>" />
         </label>

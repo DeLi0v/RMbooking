@@ -15,29 +15,6 @@ function openPage(evt, name) {
     success: () => elem.load("/pages/" + name + ".php"),
     error: () => console.log("Файл '/pages/", name, ".php' не найден"),
   });
-
-  // if ($("#elementId").length) {
-  // Получаем все обязательные поля формы
-  var requiredFields = document.querySelectorAll("#editForm [required]");
-
-  // Добавляем обработчик события invalid для каждого обязательного поля
-  requiredFields.forEach(function (field) {
-    field.addEventListener("invalid", function () {
-      // Добавляем класс invalid-input к незаполненному полю
-      field.classList.add("invalid-input");
-    });
-  });
-
-  // Добавляем обработчик события input для каждого обязательного поля, чтобы убрать подсветку при вводе
-  requiredFields.forEach(function (field) {
-    field.addEventListener("input", function () {
-      // Убираем класс invalid-input у поля при вводе данных
-      if (field.validity.valid) {
-        field.classList.remove("invalid-input");
-      }
-    });
-  });
-  // }
 }
 
 function deleteStr(evt, id, page) {
@@ -89,7 +66,20 @@ function saveEdit(evt, page, id) {
   // Проверяем валидность формы
   var form = $("#editForm");
   if (!form.checkValidity()) {
-    // Если форма не прошла валидацию, выходим из функции
+    // Находим все обязательные поля формы
+    var requiredFields = $("#editForm [required]");
+
+    // Проходимся по каждому обязательному полю
+    requiredFields.each(function () {
+      // Проверяем, заполнено ли поле
+      if (!$(this).val()) {
+        // Если поле не заполнено, подсвечиваем его
+        $(this).addClass("highlight");
+      } else {
+        // Если поле заполнено, удаляем подсветку (если она была)
+        $(this).removeClass("highlight");
+      }
+    });
     return;
   }
 

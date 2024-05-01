@@ -48,7 +48,8 @@ if ($page == 'booking') { ?>
             Почта:
             <input type="email" name="email" required value="<?php echo $row["email"] ?>" />
         </label>
-        <button>Сохранить</button>
+        <button class="cancel">Отменить</button>
+        <button class="save">Сохранить</button>
     </form>
 <?php } elseif ($page == 'rooms') { ?>
 

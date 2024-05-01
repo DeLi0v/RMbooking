@@ -70,9 +70,9 @@
     $db->close();
 
     // Отправляем ответ клиенту (статус HTTP 200 для успешного выполнения)
-    if ($result) {
-        http_response_code(200);
-    } else {
-        http_response_code(500);
-    }    
+    // if ($result) {
+    //     http_response_code(200);
+    // } else {
+    //     http_response_code(500);
+    // }    
 ?>

@@ -6,6 +6,7 @@
     mysqli_select_db($conn, $db->database);
 
     $sql = "SELECT
+                id AS id,
                 room AS room,
                 client AS client,
                 staff AS staff,
@@ -27,6 +28,8 @@
             <th>Помещение</th>
             <th>Стоимость</th>
             <th>Сотрудник</th>
+            <th style="width: 0">Изменить</th>
+            <th style="width: 0">Удалить</th>
         </tr>
         
         <?php
@@ -38,6 +41,8 @@
                 echo "<td>" . $row["room"] . "</td>";
                 echo "<td>" . $row["sum"] . "</td>";
                 echo "<td>" . $row["staff"] . "</td>";
+                echo '<td class="center"><input type="image" src="/pictures/edit_orange.png" onclick="editStr(event, ' . $row["id"] . ', \'booking\')"></input></td>';
+                echo '<td class="center"><input type="image" src="/pictures/remove.png" onclick="deleteStr(event, ' . $row["id"] . ', \'booking\')"></input></td>';
                 echo "</tr>";
             }
         ?>

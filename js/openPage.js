@@ -29,18 +29,13 @@ function deleteStr(evt, id, page) {
   xhr.onload = function () {
     if (xhr.status === 200) {
       // Обновляем страницу после успешного удаления
-      window.location.reload();
+      const elem = $(".content");
+      elem.load("/pages/" + page + ".php");
     }
   };
   xhr.send("id=" + id + "&table=" + page);
-
-  // const elem = $(".content");
-  // elem.load("/pages/" + page + ".php");
 }
 
 function editStr(evt, id, page) {
   console.log("Edit: ", id);
-
-  const elem = $(".content");
-  elem.load("/pages/" + page + ".php");
 }

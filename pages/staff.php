@@ -31,6 +31,8 @@
                 <th>Дата рождения</th>
                 <th>Пол</th>
                 <th>Паспорт</th>
+                <th style="width: 0">Изменить</th>
+                <th style="width: 0">Удалить</th>
             </tr>
         
         <?php
@@ -45,6 +47,8 @@
             echo "<td>" . $row["birthday"] . "</td>";
             echo "<td>" . $row["sex"] . "</td>";
             echo "<td>" . $row["passport"] . "</td>";
+            echo '<td class="center"><input type="image" src="/pictures/edit_orange.png" onclick="editStr(event, ' . $row["id"] . ', \'staff\')"></input></td>';
+            echo '<td class="center"><input type="image" src="/pictures/remove.png" onclick="deleteStr(event, ' . $row["id"] . ', \'staff\')"></input></td>';
             echo "</tr>";
         }
         ?>

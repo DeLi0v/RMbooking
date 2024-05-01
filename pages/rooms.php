@@ -23,6 +23,8 @@
             <th>Описание</th>
             <th>Адрес</th>
             <th>Стоимость</th>
+            <th style="width: 0">Изменить</th>
+            <th style="width: 0">Удалить</th>
         </tr>
     
     <?php
@@ -33,6 +35,8 @@
         echo "<td>" . $row["description"] . "</td>";
         echo "<td>" . $row["address"] . "</td>";
         echo "<td>" . $row["cost"] . "</td>";
+        echo '<td class="center"><input type="image" src="/pictures/edit_orange.png" onclick="editStr(event, ' . $row["id"] . ', \'rooms\')"></input></td>';
+        echo '<td class="center"><input type="image" src="/pictures/remove.png" onclick="deleteStr(event, ' . $row["id"] . ', \'rooms\')"></input></td>';
         echo "</tr>";
     }
     ?>

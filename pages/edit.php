@@ -124,9 +124,19 @@ if ($page == 'booking') { ?>
             Отчество:
             <input type="text" name="patronymic" value="<?php echo $row["patronymic"] ?>" />
         </label>
-        <label for="post">
-            Должность:
-            <input type="text" name="post" required value="<?php echo $row["post"] ?>" />
+        <label for="sex" class="sex">
+            Пол:
+            <div><input type="radio" name="sex" value="М" required <?php if ($row["sex"] === "М") echo "checked"; ?>>Мужской</div>
+            <div><input type="radio" name="sex" value="Ж" required <?php if ($row["sex"] === "Ж") echo "checked"; ?>>Женский</div>
+            
+        </label>
+        <label for="birthday">
+            День рождения:
+            <input type="date" name="birthday" required value="<?php echo $row["birthday"] ?>" />
+        </label>
+        <label for="passport">
+            Паспорт:
+            <input type="text" name="passport" required value="<?php echo $row["passport"] ?>" />
         </label>
         <label for="phone">
             Телефон:
@@ -136,19 +146,9 @@ if ($page == 'booking') { ?>
             Почта:
             <input type="email" name="email" required value="<?php echo $row["email"] ?>" />
         </label>
-        <label for="birthday">
-            День рождения:
-            <input type="date" name="birthday" required value="<?php echo $row["birthday"] ?>" />
-        </label>
-        <label for="sex" class="sex">
-            Пол:
-            <div><input type="radio" name="sex" value="М" required <?php if ($row["sex"] === "М") echo "checked"; ?>>Мужской</div>
-            <div><input type="radio" name="sex" value="Ж" required <?php if ($row["sex"] === "Ж") echo "checked"; ?>>Женский</div>
-            
-        </label>
-        <label for="passport">
-            Паспорт:
-            <input type="text" name="passport" required value="<?php echo $row["passport"] ?>" />
+        <label for="post">
+            Должность:
+            <input type="text" name="post" required value="<?php echo $row["post"] ?>" />
         </label>
         <button class="cancel" onclick="cancelEdit(event,'<?php echo $page ?>')">Отменить</button>
         <button class="save" onclick="saveEdit(event,'<?php echo $page ?>', '<?php echo $id ?>')">Сохранить</button>

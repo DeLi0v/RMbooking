@@ -1,4 +1,4 @@
-<button onclick="addStr(event, 'clients')">Добавить</button>
+<button class="addBtn" onclick="addStr(event, 'clients')">Добавить</button>
 
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");

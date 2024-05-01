@@ -50,6 +50,7 @@
 table {
     border: 1px solid #eee;
 	width: 100%;
+    margin-top: 10px;
 	margin-bottom: 20px;
     border-collapse: collapse;
 }
@@ -85,18 +86,18 @@ table .center {
 /*       Add      */
 /* ////////////// */
 
-button {
+.addBtn {
     padding: 10px 20px; /* Отступы внутри кнопки */
     font-size: 16px; /* Размер шрифта */
-    background-color: #007bff; /* Цвет фона кнопки */
+    background-color: #40e2a4; /* Цвет фона кнопки */
     color: #fff; /* Цвет текста */
     border: none; /* Убираем границу */
     border-radius: 4px; /* Скругляем углы */
     cursor: pointer; /* Изменяем курсор при наведении */
 }
 
-button:hover {
-    background-color: #0056b3; /* Цвет фона кнопки при наведении */
+.addBtn:hover {
+    background-color: #32ad7e; /* Цвет фона кнопки при наведении */
 }
 
 /* ////////////// */

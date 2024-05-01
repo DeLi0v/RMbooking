@@ -1,5 +1,6 @@
-<?php 
+<option value="">--Помещение не выбрано--</option>
 
+<?php 
 require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");
 $db = new DB_Class();
 $conn = $db->connect();
@@ -15,7 +16,7 @@ $sql = "SELECT
             cost AS cost
         FROM Rooms
         WHERE
-            type = $type";
+            type = '$type'";
 
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) { 

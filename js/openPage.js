@@ -65,17 +65,25 @@ function saveEdit(evt, page, id) {
 
   var formData = $("#editForm").serialize();
 
-  $.ajax({
-    url: "/components/save_edit.php", // Файл на сервере для обработки данных
-    type: "POST",
-    data: { page: page, id: id, formData: formData },
-    success: function (response) {
-      console.log(formData);
-      const elem = $(".content");
-      // elem.load("/pages/" + page + ".php");
-    },
-    error: function (xhr, status, error) {
-      console.error("Ошибка сохранения:", error);
-    },
-  });
+  // $.ajax({
+  //   url: "/components/save_edit.php", // Файл на сервере для обработки данных
+  //   type: "POST",
+  //   data: { page: page, id: id, formData: formData },
+  //   success: function (response) {
+  //     console.log(formData);
+  //     const elem = $(".content");
+  //     // elem.load("/pages/" + page + ".php");
+  //   },
+  //   error: function (xhr, status, error) {
+  //     console.error("Ошибка сохранения:", error);
+  //   },
+  // });
+
+  var params = {
+    page: page,
+    id: id,
+    formData: formData,
+  };
+  const elem = $(".content");
+  elem.load("/components/save_edit.php", params);
 }

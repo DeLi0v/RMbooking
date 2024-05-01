@@ -13,14 +13,26 @@
     parse_str($formData, $formDataArr);
 
     if ($table == 'Booking') {
-        // $sql = "UPDATE Booking
-        // SET 
-        //     idCategory = '$category',
-        //     EquepmentName = '$name',
-        //     size = '$size',
-        //     storage = '$storage',
-        //     price = '$price'
-        // WHERE (id = $id)";
+
+        $room               = $formDataArr['room'];
+        $client             = $formDataArr['client'];
+        $staff              = $formDataArr['staff'];
+        $booking_date       = $formDataArr['booking_date'];
+        $booking_time_begin = $formDataArr['booking_time_begin'];
+        $booking_time_end   = $formDataArr['booking_time_end'];
+        $sum                = $formDataArr['sum'];
+
+        $sql = "UPDATE Booking 
+                SET 
+                    room                = '$room',
+                    client              = '$client',
+                    staff               = '$staff',
+                    booking_date        = '$booking_date',
+                    booking_time_begin  = '$booking_time_begin',
+                    booking_time_end    = '$booking_time_end',
+                    sum                 = '$sum'
+                WHERE id = $id";
+
     } elseif ($table == 'Clients') {
 
         $surname    = $formDataArr['surname'];
@@ -37,24 +49,49 @@
                     phone       = '$phone',
                     email       = '$email'
                 WHERE id = $id";
+
     } elseif ($table == 'Staff') {
-        // $sql = "UPDATE 
-        // SET 
-        //     idCategory = '$category',
-        //     EquepmentName = '$name',
-        //     size = '$size',
-        //     storage = '$storage',
-        //     price = '$price'
-        // WHERE (id = $id)";
+
+        $surname    = $formDataArr['surname'];
+        $name       = $formDataArr['name'];
+        $patronymic = $formDataArr['patronymic'];
+        $post       = $formDataArr['post'];
+        $phone      = $formDataArr['phone'];
+        $email      = $formDataArr['email'];
+        $birthday   = $formDataArr['birthday'];
+        $sex        = $formDataArr['sex'];
+        $passport   = $formDataArr['passport'];
+
+        $sql = "UPDATE Staff 
+                SET 
+                    surname     = '$surname',
+                    name        = '$name',
+                    patronymic  = '$patronymic',
+                    post        = '$post',
+                    phone       = '$phone',
+                    email       = '$email',
+                    birthday    = '$birthday',
+                    sex         = '$sex',
+                    passport    = '$passport'
+                WHERE id = $id";
+
     } elseif ($table == 'Rooms') {
-        // $sql = "UPDATE 
-        // SET 
-        //     idCategory = '$category',
-        //     EquepmentName = '$name',
-        //     size = '$size',
-        //     storage = '$storage',
-        //     price = '$price'
-        // WHERE (id = $id)";
+        
+        $type           = $formDataArr['type'];
+        $name           = $formDataArr['name'];
+        $description    = $formDataArr['description'];
+        $address        = $formDataArr['address'];
+        $cost           = $formDataArr['cost'];
+
+        $sql = "UPDATE Rooms 
+                SET 
+                    type        = '$type',
+                    name        = '$name',
+                    description = '$description',
+                    address     = '$address',
+                    cost        = '$cost'
+                WHERE id = $id";
+
     }
 
     // Выполняем SQL запрос
@@ -67,6 +104,6 @@
     if ($result) {
         http_response_code(200);
     } else {
-        // http_response_code(500);
+        http_response_code(500);
     }    
 ?>

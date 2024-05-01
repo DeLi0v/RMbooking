@@ -78,12 +78,4 @@ function saveEdit(evt, page, id) {
       console.error("Ошибка сохранения:", error);
     },
   });
-
-  // var params = {
-  //   page: page,
-  //   id: id,
-  //   formData: formData,
-  // };
-  // const elem = $(".content");
-  // elem.load("/components/save_edit.php", params);
 }

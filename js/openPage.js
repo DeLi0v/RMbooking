@@ -64,15 +64,21 @@ function saveEdit(evt, page, id) {
   evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
 
   // Проверяем валидность всех обязательных полей
+  var valid = true;
   $("#editForm [required]").each(function () {
     if (!$(this).val()) {
       // Если поле не заполнено, добавляем класс для подсветки
       $(this).addClass("highlight");
+      valid = false;
     } else {
       // Если поле заполнено, удаляем класс подсветки (если был добавлен)
       $(this).removeClass("highlight");
     }
   });
+
+  if (!valid) {
+    return;
+  }
 
   var formData = $("#editForm").serialize();
 

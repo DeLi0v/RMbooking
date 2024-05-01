@@ -163,9 +163,3 @@ if ($page == 'booking') { ?>
     <div>Page not found</div>
 <?php } 
 $db->close();?>
-<script>
-// Удаляем подсветку при начале ввода в обязательных полях
-  $("#editForm [required]").on("input", function() {
-    $(this).removeClass("highlight");
-  });
-</script>

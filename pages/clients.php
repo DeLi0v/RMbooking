@@ -19,9 +19,7 @@
     if (mysqli_num_rows($result) > 0) { ?>
         <table>
         <tr>
-            <th>Фамилия</th>
-            <th>Имя</th>
-            <th>Отчество</th>
+            <th>ФИО</th>
             <th>Телефон</th>
             <th>Почта</th>
             <th style="width: 0">Изменить</th>
@@ -31,9 +29,7 @@
         <?php
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>" . $row["surname"] . "</td>";
-            echo "<td>" . $row["name"] . "</td>";
-            echo "<td>" . $row["patronymic"] . "</td>";
+            echo "<td>" . $row["surname"] . " " . $row["name"] . " " . $row["patronymic"] . "</td>";
             echo "<td>" . $row["phone"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
             echo '<td class="center"><input type="image" src="/pictures/edit_orange.png" onclick="editStr(event, ' . $row["id"] . ', \'clients\')"></input></td>';

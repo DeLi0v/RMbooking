@@ -6,6 +6,7 @@
     mysqli_select_db($conn, $db->database);
 
     $sql = "SELECT 
+                id AS id,
                 surname AS surname,
                 name AS name,
                 patronymic AS patronymic,
@@ -23,6 +24,7 @@
             <th>Отчество</th>
             <th>Телефон</th>
             <th>Почта</th>
+            <th>Удалить</th>
         </tr>
         
         <?php
@@ -33,6 +35,7 @@
             echo "<td>" . $row["patronymic"] . "</td>";
             echo "<td>" . $row["phone"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
+            echo '<button value="' . $row["id"] . '"></button>';
             echo "</tr>";
         }
         ?>

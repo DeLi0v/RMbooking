@@ -23,7 +23,7 @@
         //     price = '$price'
         // WHERE (id = $id)";
     } elseif ($table = 'Clients') {
-        $sql = "UPDATE 
+        $sql = "UPDATE Clients 
                 SET 
                     surname     = '".$formDataArr['surname']."',
                     name        = '".$formDataArr['name']."',

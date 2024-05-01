@@ -17,6 +17,30 @@ function openPage(evt, name) {
   });
 }
 
-function deleteStr(evt, id) {
-  console.log(id);
+function deleteStr(evt, id, page) {
+  console.log("Delete: ", id);
+
+  evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
+
+  // Отправляем AJAX запрос на сервер для удаления строки
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/components/delete.php", false);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      // Обновляем страницу после успешного удаления
+      window.location.reload();
+    }
+  };
+  xhr.send("id=" + id + "&table=" + page);
+
+  // const elem = $(".content");
+  // elem.load("/pages/" + page + ".php");
+}
+
+function editStr(evt, id, page) {
+  console.log("Edit: ", id);
+
+  const elem = $(".content");
+  elem.load("/pages/" + page + ".php");
 }

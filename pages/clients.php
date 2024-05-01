@@ -36,8 +36,8 @@
             echo "<td>" . $row["patronymic"] . "</td>";
             echo "<td>" . $row["phone"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
-            echo '<td class="center"><input type="image" src="/pictures/edit_orange.png" value="' . $row["id"] . '" onclick="deleteStr(event, ' . $row["id"] . ')"></input></td>';
-            echo '<td class="center"><input type="image" src="/pictures/remove.png" value="' . $row["id"] . '"></input></td>';
+            echo '<td class="center"><input type="image" src="/pictures/edit_orange.png" onclick="editStr(event, ' . $row["id"] . ', \'clients\')"></input></td>';
+            echo '<td class="center"><input type="image" src="/pictures/remove.png" onclick="deleteStr(event, ' . $row["id"] . ', \'clients\')"></input></td>';
             echo "</tr>";
         }
         ?>

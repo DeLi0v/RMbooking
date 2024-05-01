@@ -7,16 +7,27 @@
     $conn = $db->connect();
     mysqli_select_db($conn, $db->database);
 
-    $sql = "SELECT
-                id AS id,
-                room AS room,
-                client AS client,
-                staff AS staff,
-                booking_date AS booking_date,
-                booking_time_begin AS booking_time_begin,
-                booking_time_end AS booking_time_end,
-                sum AS sum
-            FROM Booking";
+    $sql = "SELECT 
+                Booking.id AS id
+                Rooms.name AS room,
+                Clients.surname AS clientSurname,
+                Clients.name AS clientName,
+                Clients.patronymic AS clientPatronymic,
+                Staff.surname AS staffSurname,
+                Staff.name AS staffName,
+                Staff.patronymic AS staffPatronymic,
+                Booking.booking_date AS booking_date,
+                Booking.booking_time_begin AS booking_time_begin,
+                Booking.booking_time_end AS booking_time_end,
+                Booking.sum AS sum
+            FROM 
+                `Booking`
+                LEFT JOIN `Clients` ON Booking.client = Clients.id
+                LEFT JOIN `Staff` ON Booking.staff = Staff.id
+                LEFT JOIN `Rooms`ON Booking.room = Rooms.id
+            ORDER BY 
+                booking_date,
+                booking_time_begin";
 
     $result = mysqli_query($conn, $sql);
 
@@ -39,10 +50,10 @@
                 echo "<tr>";
                 echo "<td>" . $row["booking_date"] . "</td>";
                 echo "<td>" . $row["booking_time_begin"] . " - " . $row["booking_time_end"] . "</td>";
-                echo "<td>" . $row["client"] . "</td>";
+                echo "<td>" . $row["clientSurname"] . " " . $row["clientName"] . " " . $row["clientPatronymic"] . "</td>";
                 echo "<td>" . $row["room"] . "</td>";
                 echo "<td>" . $row["sum"] . "</td>";
-                echo "<td>" . $row["staff"] . "</td>";
+                echo "<td>" . $row["staffSurname"] . " " . $row["staffName"] . " " . $row["staffPatronymic"] . "</td>";
                 echo '<td class="center"><input type="image" src="/pictures/edit_orange.png" onclick="editStr(event, ' . $row["id"] . ', \'booking\')"></input></td>';
                 echo '<td class="center"><input type="image" src="/pictures/remove.png" onclick="deleteStr(event, ' . $row["id"] . ', \'booking\')"></input></td>';
                 echo "</tr>";

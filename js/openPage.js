@@ -16,28 +16,28 @@ function openPage(evt, name) {
     error: () => console.log("Файл '/pages/", name, ".php' не найден"),
   });
 
-  if ($("#elementId").length) {
-    // Получаем все обязательные поля формы
-    var requiredFields = document.querySelectorAll("#editForm [required]");
+  // if ($("#elementId").length) {
+  // Получаем все обязательные поля формы
+  var requiredFields = document.querySelectorAll("#editForm [required]");
 
-    // Добавляем обработчик события invalid для каждого обязательного поля
-    requiredFields.forEach(function (field) {
-      field.addEventListener("invalid", function () {
-        // Добавляем класс invalid-input к незаполненному полю
-        field.classList.add("invalid-input");
-      });
+  // Добавляем обработчик события invalid для каждого обязательного поля
+  requiredFields.forEach(function (field) {
+    field.addEventListener("invalid", function () {
+      // Добавляем класс invalid-input к незаполненному полю
+      field.classList.add("invalid-input");
     });
+  });
 
-    // Добавляем обработчик события input для каждого обязательного поля, чтобы убрать подсветку при вводе
-    requiredFields.forEach(function (field) {
-      field.addEventListener("input", function () {
-        // Убираем класс invalid-input у поля при вводе данных
-        if (field.validity.valid) {
-          field.classList.remove("invalid-input");
-        }
-      });
+  // Добавляем обработчик события input для каждого обязательного поля, чтобы убрать подсветку при вводе
+  requiredFields.forEach(function (field) {
+    field.addEventListener("input", function () {
+      // Убираем класс invalid-input у поля при вводе данных
+      if (field.validity.valid) {
+        field.classList.remove("invalid-input");
+      }
     });
-  }
+  });
+  // }
 }
 
 function deleteStr(evt, id, page) {

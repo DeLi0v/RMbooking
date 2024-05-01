@@ -89,7 +89,7 @@ table .center {
 .addBtn {
     padding: 10px 20px; /* Отступы внутри кнопки */
     font-size: 16px; /* Размер шрифта */
-    background-color: #28a745; /* Цвет фона кнопки */
+    background-color: #4CAF50; /* Цвет фона кнопки */
     color: #fff; /* Цвет текста */
     border: none; /* Убираем границу */
     border-radius: 4px; /* Скругляем углы */
@@ -99,7 +99,7 @@ table .center {
 }
 
 .addBtn:hover {
-    background-color: #218838; /* Цвет фона кнопки при наведении */
+    background-color: #3d8b40; /* Цвет фона кнопки при наведении */
 }
 
 /* ////////////// */

@@ -6,6 +6,7 @@
     mysqli_select_db($conn, $db->database);
 
     $sql = "SELECT 
+                id AS id,
                 surname AS surname,
                 name AS name,
                 patronymic AS patronymic,

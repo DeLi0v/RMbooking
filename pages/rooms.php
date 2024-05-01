@@ -6,6 +6,7 @@
     mysqli_select_db($conn, $db->database);
 
     $sql = "SELECT 
+                id AS id,
                 type AS type,
                 name AS name,
                 description AS description,

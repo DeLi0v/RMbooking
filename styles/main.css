@@ -77,6 +77,6 @@ table tbody tr:nth-child(even){
 	background: #F7F7F7;
 }
 
-table input {
+table .delete_edit {
     max-height: 25px;
 }

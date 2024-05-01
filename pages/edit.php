@@ -131,7 +131,6 @@ if ($page == 'booking') { ?>
             Пол:
             <div><input type="radio" name="sex" value="М" required <?php if ($row["sex"] === "М") echo "checked"; ?>>Мужской</div>
             <div><input type="radio" name="sex" value="Ж" required <?php if ($row["sex"] === "Ж") echo "checked"; ?>>Женский</div>
-            
         </label>
         <label for="birthday">
             День рождения:

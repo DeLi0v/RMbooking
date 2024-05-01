@@ -70,6 +70,7 @@ if ($page == "booking") {
                     }
                 ?>
             </select>
+            <div>Стоимость: <?php echo $row["cost"] ?></div>
         </label>
         <label for="booking_date">Дата бронирования:
             <input type="date" name="booking_date" id="booking_date" disabled />
@@ -83,6 +84,8 @@ if ($page == "booking") {
         <label for="sum">Сумма:
             <input type="text" name="sum" id="sum" disabled />
         </label>
+        <button class="cancel" onclick="cancelEdit(event,'<?php echo $page ?>')">Отменить</button>
+        <button class="save" onclick="createStr(event,'<?php echo $page ?>')">Создать</button>
     </form>
     <script>
 
@@ -177,6 +180,7 @@ if ($page == "booking") {
                 $("#sum").prop("disabled", true).val("");
             }
         });
+
     </script>
 <?php $db->close(); 
 } elseif ($page == "clients") { ?>

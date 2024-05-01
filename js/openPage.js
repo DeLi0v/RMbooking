@@ -48,7 +48,9 @@ function editStr(evt, id, page) {
   elem.load("/pages/edit.php", params);
 }
 
-function cancelEdit(page) {
+function cancelEdit(evt, page) {
+  evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
+
   const elem = $(".content");
   $.ajax({
     url: "/pages/" + page + ".php",
@@ -58,7 +60,9 @@ function cancelEdit(page) {
   });
 }
 
-function saveEdit(page, id) {
+function saveEdit(evt, page, id) {
+  evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
+
   var formData = $("#editForm").serialize();
 
   $.ajax({

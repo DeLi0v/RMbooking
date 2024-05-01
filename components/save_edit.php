@@ -61,6 +61,7 @@
     }
 
     // Выполняем SQL запрос
+    echo $sql;
     $result = mysqli_query($conn, $sql);
 
     // Закрываем соединение с базой данных

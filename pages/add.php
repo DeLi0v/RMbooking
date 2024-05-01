@@ -121,13 +121,13 @@ if ($page == "booking") {
         $("#typeRoom").on("change", function() {
             if ($(this).val() !== "") {
                 $("#room").prop("disabled", false).val("");
-                $("#booking_date").val("");
+                $("#booking_date").prop("disabled", true).val("");
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
             } else {
                 $("#room").prop("disabled", true).val("");
-                $("#booking_date").val("");
+                $("#booking_date").prop("disabled", true).val("");
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
@@ -141,7 +141,7 @@ if ($page == "booking") {
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
             } else {
-                $("#booking_date").val("");
+                $("#booking_date").prop("disabled", true).val("");
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");

@@ -90,19 +90,19 @@ if ($page == "booking") {
             if ($(this).val() !== "") {
                 $("#typeRoom").prop("disabled", false);
                 if($("#room").val() !== ""){
-                    $(this).prop("disabled", false);
+                    $("#room").prop("disabled", false);
                 }
                 if($("#booking_date").val() !== ""){
-                    $(this).prop("disabled", false);
+                    $("#booking_date").prop("disabled", false);
                 }
                 if($("#booking_time_begin").val() !== ""){
-                    $(this).prop("disabled", false);
+                    $("#booking_time_begin").prop("disabled", false);
                 }
                 if($("#booking_time_end").val() !== ""){
-                    $(this).prop("disabled", false);
+                    $("#booking_time_end").prop("disabled", false);
                 }
                 if($("#sum").val() !== ""){
-                    $(this).prop("disabled", false);
+                    $("#sum").prop("disabled", false);
                 }
             } else {
                 $("#typeRoom").prop("disabled", true);

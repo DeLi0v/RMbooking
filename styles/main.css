@@ -108,8 +108,20 @@ form input {
     box-sizing: border-box; /* Учет границы в расчете размера */
 }
 
-form label div {
-    display: flex;
+form .sex {
+    display: flex; 
+    align-items: baseline;
+}
+
+form .sex div {
+    display: flex; 
+    align-items: baseline;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form .sex input {
+    margin-right: 10px;
 }
 
 form button {

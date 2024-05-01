@@ -140,12 +140,11 @@ if ($page == 'booking') { ?>
             День рождения:
             <input type="date" name="birthday" required value="<?php echo $row["birthday"] ?>" />
         </label>
-        <label for="sex">
+        <label for="sex" class="sex">
             Пол:
-            <div>
-                <input type="radio" name="sex" value="М" required <?php if ($row["sex"] === "М") echo "checked"; ?>>Мужской
-                <input type="radio" name="sex" value="Ж" required <?php if ($row["sex"] === "Ж") echo "checked"; ?>>Женский
-            </div>
+            <div><input type="radio" name="sex" value="М" required <?php if ($row["sex"] === "М") echo "checked"; ?>>Мужской</div>
+            <div><input type="radio" name="sex" value="Ж" required <?php if ($row["sex"] === "Ж") echo "checked"; ?>>Женский</div>
+            
         </label>
         <label for="passport">
             Паспорт:

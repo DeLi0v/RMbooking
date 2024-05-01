@@ -126,7 +126,7 @@ if ($page == 'booking') { ?>
         </label>
         <label for="post">
             Должность:
-            <input type="text" name="post" value="<?php echo $row["post"] ?>" />
+            <input type="text" name="post" required value="<?php echo $row["post"] ?>" />
         </label>
         <label for="phone">
             Телефон:
@@ -140,24 +140,10 @@ if ($page == 'booking') { ?>
             День рождения:
             <input type="date" name="birthday" required value="<?php echo $row["birthday"] ?>" />
         </label>
-        <!-- <label for="sex">
-            Пол:
-            <input type="text" name="sex" required value="<?php echo $row["sex"] ?>" />
-            <select name="sex" required>
-                <option value="М" <?php if ($row["sex"] === "М") echo "selected"; ?>>Мужской</option>
-                <option value="Ж" <?php if ($row["sex"] === "Ж") echo "selected"; ?>>Женский</option>
-            </select>
-            <input type="radio" name="sex" value="М" <?php if ($row["sex"] === "М") echo "checked"; ?>>
-            <input type="radio" name="sex" value="Ж" <?php if ($row["sex"] === "Ж") echo "checked"; ?>>
-        </label> -->
         <label for="sex">
             Пол:
-            <input type="radio" name="sex" value="М" <?php if ($row["sex"] === "М") echo "checked"; ?>>
-            Мужской
-        </label>
-        <label for="sex">
-            <input type="radio" name="sex" value="Ж" <?php if ($row["sex"] === "Ж") echo "checked"; ?>>
-            Женский
+            <input type="radio" name="sex" value="М" required <?php if ($row["sex"] === "М") echo "checked"; ?>>
+            <input type="radio" name="sex" value="Ж" required <?php if ($row["sex"] === "Ж") echo "checked"; ?>>
         </label>
         <label for="passport">
             Паспорт:

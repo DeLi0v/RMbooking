@@ -16,8 +16,7 @@ function openPage(evt, name) {
     error: () => console.log("Файл '/pages/", name, ".php' не найден"),
   });
 
-  if (document.getElementById("editForm")) {
-    console.log("set invalid");
+  if ($("#elementId").length) {
     // Получаем все обязательные поля формы
     var requiredFields = document.querySelectorAll("#editForm [required]");
 

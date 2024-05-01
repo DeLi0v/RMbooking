@@ -50,20 +50,18 @@ function createStr(evt, page) {
 
   var formData = $("#editForm").serialize();
 
-  // $.ajax({
-  //   url: "/components/create.php", // Файл на сервере для обработки данных
-  //   type: "POST",
-  //   data: { page: page, formData: formData },
-  //   success: function (response) {
-  //     const elem = $(".content");
-  //     elem.load("/pages/" + page + ".php");
-  //   },
-  //   error: function (xhr, status, error) {
-  //     console.error("Ошибка сохранения:", error);
-  //   },
-  // });
-  const elem = $(".content");
-  elem.load("/components/create.php", { page: page, formData: formData });
+  $.ajax({
+    url: "/components/create.php", // Файл на сервере для обработки данных
+    type: "POST",
+    data: { page: page, formData: formData },
+    success: function (response) {
+      const elem = $(".content");
+      elem.load("/pages/" + page + ".php");
+    },
+    error: function (xhr, status, error) {
+      console.error("Ошибка сохранения:", error);
+    },
+  });
 }
 
 function deleteStr(evt, id, page) {

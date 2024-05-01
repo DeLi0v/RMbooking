@@ -3,6 +3,12 @@
 $id = $_POST['id'];
 $page = $_POST['page'];
 
+require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");
+
+$db = new DB_Class();
+$conn = $db->connect();
+mysqli_select_db($conn, $db->database);
+
 if ($page == 'booking') { ?>
     <form>
         
@@ -50,4 +56,5 @@ if ($page == 'booking') { ?>
 
 <?php } else { ?>
     <div>Page not found</div>
-<?php } ?>
+<?php } 
+$db->close();?>

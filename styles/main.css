@@ -154,4 +154,4 @@ form button:hover {
 .invalid-input {
     border-color: red; /* Цвет границы поля */
     box-shadow: 0 0 5px red; /* Тень поля */
-  }
+}

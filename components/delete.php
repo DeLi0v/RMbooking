@@ -1,6 +1,5 @@
 
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Подключаемся к базе данных
     require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");
     $db = new DB_Class();
@@ -22,5 +21,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Отправляем ответ клиенту (статус HTTP 200 для успешного выполнения)
     http_response_code(200);
-}
+
 ?>

@@ -47,3 +47,30 @@ function editStr(evt, id, page) {
 
   elem.load("/pages/edit.php", params);
 }
+
+function cancelEdit(page) {
+  const elem = $(".content");
+  $.ajax({
+    url: "/pages/" + page + ".php",
+    type: "HEAD",
+    success: () => elem.load("/pages/" + page + ".php"),
+    error: () => console.log("Файл '/pages/", page, ".php' не найден"),
+  });
+}
+
+function saveEdit(page, id) {
+  var formData = $("#editForm").serialize();
+
+  $.ajax({
+    url: "/components/save_edit.php", // Файл на сервере для обработки данных
+    type: "POST",
+    data: { page: page, id: id, formData: formData },
+    success: function (response) {
+      const elem = $(".content");
+      elem.load("/pages/" + page + ".php");
+    },
+    error: function (xhr, status, error) {
+      console.error("Ошибка сохранения:", error);
+    },
+  });
+}

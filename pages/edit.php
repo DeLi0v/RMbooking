@@ -10,7 +10,7 @@ $conn = $db->connect();
 mysqli_select_db($conn, $db->database);
 
 if ($page == 'booking') { ?>
-    <form>
+    <form id="editForm">
         
     </form>
 <?php } elseif ($page == 'clients') { 
@@ -27,7 +27,7 @@ if ($page == 'booking') { ?>
 
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result); ?>
-    <form>
+    <form id="editForm">
         <label for="surname">
             Фамилия:
             <input type="text" name="surname" required value="<?php echo $row["surname"] ?>" />
@@ -48,8 +48,8 @@ if ($page == 'booking') { ?>
             Почта:
             <input type="email" name="email" required value="<?php echo $row["email"] ?>" />
         </label>
-        <button class="cancel">Отменить</button>
-        <button class="save">Сохранить</button>
+        <button class="cancel" onclick="cancelEdit('<?php echo $page ?>')">Отменить</button>
+        <button class="save" onclick="saveEdit('<?php echo '$page , $id' ?>')">Сохранить</button>
     </form>
 <?php } elseif ($page == 'rooms') { ?>
 

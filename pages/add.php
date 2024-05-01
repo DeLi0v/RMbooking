@@ -2,26 +2,90 @@
 
 $page = $_POST['page'];
 
-require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");
+if ($page == "booking") { 
+    
+    require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");
+    $db = new DB_Class();
+    $conn = $db->connect();
+    mysqli_select_db($conn, $db->database); ?>
 
-$db = new DB_Class();
-$conn = $db->connect();
-mysqli_select_db($conn, $db->database);
-
-if ($page == "booking") { ?>
     <form id="editForm">
-        <label for="surname">Фамилия:</label>
-        <select name="pets" id="pet-select">
-            <option value="">--Please choose an option--</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
-        </select>
+        <label for="staff">Сотрудник:
+            <select name="staff">
+                <option disabled>--Сотрудник не выбран--</option>
+                
+                <?php 
+                    $sql = "SELECT 
+                                id AS id,
+                                surname AS surname,
+                                name AS name,
+                                patronymic AS patronymic
+                            FROM Staff";
+                    
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) { 
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='". $row['id'] ."'>". $row["surname"] . " " . $row["name"] . " " . $row["patronymic"] . "</option>";
+                        }
+                    }
+                ?>
+            </select>
+        </label>
+        <label for="typeRoom">Тип помещения:
+            <select name="typeRoom">
+                <option disabled>--Тип помещения не выбран--</option>
+                
+                <?php 
+                    $sql = "SELECT DISTINCT
+                                type AS type
+                            FROM Rooms";
+                    
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) { 
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='". $row['type'] ."'>". $row["type"] ."</option>";
+                        }
+                    }
+                ?>
+            </select>
+        </label>
+        <label for="room">Помещение:
+            <select name="room">
+                <option disabled>--Помещение не выбрано--</option>
+                
+                <?php 
+                    $sql = "SELECT
+                                id AS id,
+                                name AS name,
+                                description AS description,
+                                address AS address,
+                                cost AS cost
+                            FROM Rooms";
+                    
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) { 
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='". $row['id'] ."'>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ."</option>";
+                        }
+                    }
+                ?>
+            </select>
+        </label>
+        <label for="booking_date">Дата бронирования:
+            <input type="date" name="booking_date" />
+        </label>
+        <label for="booking_time_begin">Время начала бронирования:
+            <input type="time" name="booking_time_begin" />
+        </label>
+        <label for="booking_time_end">Время окончания бронирования:
+            <input type="time" name="booking_time_end" />
+        </label>
+        <label for="sum">Сумма:
+            <input type="text" name="sum" />
+        </label>
     </form>
-<?php } elseif ($page == "clients") { ?>
+<?php $db->close(); 
+} elseif ($page == "clients") { ?>
     <form id="editForm">
         <label for="surname">
             Фамилия:
@@ -123,10 +187,7 @@ if ($page == "booking") { ?>
         <button class="cancel" onclick="cancelEdit(event,'<?php echo $page ?>')">Отменить</button>
         <button class="save" onclick="createStr(event,'<?php echo $page ?>')">Создать</button>
     </form>
-<?php }
-
-$db->close();
-?>
+<?php } ?>
 <script>
     // Удаляем подсветку при начале ввода в обязательных полях
     $("#editForm [required]").on("focus", function() {

@@ -55,7 +55,7 @@ if ($page == "booking") {
             </select>
         </label>
         <label for="booking_date">Дата бронирования:
-            <input type="date" name="booking_date" id="booking_date" disabled />
+            <input type="date" name="booking_date" id="booking_date" min="<?php echo date('Y-m-d'); ?>" disabled />
         </label>
         <label for="booking_time_begin">Время начала бронирования:
             <input type="time" name="booking_time_begin" id="booking_time_begin" disabled />

@@ -2,8 +2,8 @@
 
 <div>
     <?php 
-    $id = $_POST['p1'];
-    $page = $_GET['p2'];
+    $id = $_POST['id'];
+    $page = $_POST['page'];
     echo $id;
     echo $page;
     ?>

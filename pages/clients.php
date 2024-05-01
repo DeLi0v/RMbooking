@@ -35,7 +35,7 @@
             echo "<td>" . $row["patronymic"] . "</td>";
             echo "<td>" . $row["phone"] . "</td>";
             echo "<td>" . $row["email"] . "</td>";
-            echo '<td><button value="' . $row["id"] . '">Удалить</button></td>';
+            echo '<td><input src="/pictures/remove.png" value="' . $row["id"] . '">Удалить</input></td>';
             echo "</tr>";
         }
         ?>

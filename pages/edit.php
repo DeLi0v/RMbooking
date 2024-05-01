@@ -137,11 +137,16 @@ if ($page == 'booking') { ?>
         <label for="passport">
             Паспорт:
             <input type="text" name="passport" required value="<?php echo $row["passport"] ?>" />
-            <script>$('input[name="passport"]').eq(0).mask('9999 999999');</script>
+            <script>
+                $('input[name="passport"]').eq(0).mask('9999 999999', {placeholder: "____ ______" });
+            </script>
         </label>
         <label for="phone">
             Телефон:
             <input type="tel" name="phone" required value="<?php echo $row["phone"] ?>" />
+            <script>
+                $('input[name="passport"]').eq(0).mask('+7 (999) 999-99-99');
+            </script>
         </label>
         <label for="email">
             Почта:

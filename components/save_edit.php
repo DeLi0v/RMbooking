@@ -12,9 +12,9 @@
     $formData = $_POST['formData'];
     parse_str($formData, $formDataArr);
 
-    ?> 
-
-    <?php
+    echo "$id <br>";
+    echo "$table <br>";
+    echo "$formDataArr <br>";
 
     if ($table = 'Booking') {
         // $sql = "UPDATE Booking

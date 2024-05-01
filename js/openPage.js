@@ -61,7 +61,7 @@ function cancelEdit(evt, page) {
 }
 
 function saveEdit(evt, page, id) {
-  evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
+  // evt.preventDefault(); // Предотвращаем стандартное поведение ссылки
 
   // Проверяем валидность формы
   var form = $("#editForm");

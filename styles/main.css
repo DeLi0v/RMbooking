@@ -208,7 +208,7 @@ form button:hover {
     color: white; /* Цвет текста блока времени при наведении */
 }
 
-.timeSlots:disabled {
+.timeSlots:disabled .timeBlock {
     opacity: 0.5;
     cursor: default;
 }

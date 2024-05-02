@@ -158,6 +158,9 @@ function selectTime(selectedTime) {
     (booking_time_end.val() && time <= booking_time_begin.val())
   ) {
     booking_time_begin.val(time);
+  } else if (!booking_time_end.val() && time <= booking_time_begin.val()) {
+    booking_time_end.val(booking_time_begin.val());
+    booking_time_begin.val(time);
   } else {
     booking_time_end.val(time);
   }

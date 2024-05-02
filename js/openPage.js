@@ -167,12 +167,14 @@ function selectTime(selectedTime) {
     var startBlock = document.querySelector(
       '[time="' + booking_time_begin.val() + '"]'
     );
+    startBlock.classList.add("select");
   }
 
   if (booking_time_end.val()) {
     var endBlock = document.querySelector(
       '[time="' + booking_time_end.val() + '"]'
     );
+    endBlock.classList.add("select");
   }
 
   // Подсвечиваем выбранный период времени

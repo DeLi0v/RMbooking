@@ -146,7 +146,10 @@ function selectTime(time) {
   console.log(time);
   console.log(timeString);
   console.log(timeString >= time);
-    
+  console.log(timeString >= timeString); 
+  console.log(timeString >= ('0' + '20').slice(-2) + ':' + '00' + ':00'); 
+  console.log(('0' + '20').slice(-2) + ':' + '00' + ':00');
+  
   var timeBlocks = document.querySelectorAll('.timeBlock');
   timeBlocks.forEach(function(block) {
     block.classList.remove('select');

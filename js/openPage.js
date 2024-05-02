@@ -152,18 +152,14 @@ function selectTime(selectedTime) {
   var timeSlots = $("#timeSlots");
 
   if (booking_time_begin.val() && booking_time_end.val()) {
-    timeSlots.prop("required", true);
     booking_time_begin.val(time);
     booking_time_end.val("");
   } else if (!booking_time_begin.val()) {
-    timeSlots.prop("required", true);
     booking_time_begin.val(time);
   } else if (!booking_time_end.val() && time <= booking_time_begin.val()) {
-    timeSlots.prop("required", true);
     booking_time_end.val(booking_time_begin.val());
     booking_time_begin.val(time);
   } else {
-    timeSlots.prop("required", true);
     booking_time_end.val(time);
   }
 

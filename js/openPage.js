@@ -149,20 +149,21 @@ function selectTime(selectedTime) {
 
   var booking_time_begin = $("input[name='booking_time_begin']").eq(0);
   var booking_time_end = $("input[name='booking_time_end']").eq(0);
+  var timeSlots = $("#timeSlots");
 
   if (booking_time_begin.val() && booking_time_end.val()) {
-    $("#timeSlots").prop("required", true);
+    timeSlots.prop("required", true);
     booking_time_begin.val(time);
     booking_time_end.val("");
   } else if (!booking_time_begin.val()) {
-    $("#timeSlots").prop("required", true);
+    timeSlots.prop("required", true);
     booking_time_begin.val(time);
   } else if (!booking_time_end.val() && time <= booking_time_begin.val()) {
-    $("#timeSlots").prop("required", true);
+    timeSlots.prop("required", true);
     booking_time_end.val(booking_time_begin.val());
     booking_time_begin.val(time);
   } else {
-    $("#timeSlots").prop("required", true);
+    timeSlots.prop("required", true);
     booking_time_end.val(time);
   }
 
@@ -183,7 +184,7 @@ function selectTime(selectedTime) {
 
   // Подсвечиваем выбранный период времени
   if (booking_time_begin.val() && booking_time_end.val()) {
-    $("#timeSlots").prop("required", false);
+    timeSlots.prop("required", false);
 
     while (startBlock && startBlock !== endBlock) {
       startBlock.classList.add("select");

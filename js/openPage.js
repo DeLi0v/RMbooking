@@ -153,9 +153,11 @@ function selectTime(selectedTime) {
 
   if (booking_time_begin.val() || (!booking_time_end.val() && time <= booking_time_begin.val())) {
     booking_time_begin.val(time)
+    console.log("su");
     // selectedStartTime = time;
   } else {
     booking_time_end.val(time)
+    console.log("suuu");
   }
 
   // Подсвечиваем выбранные блоки времени

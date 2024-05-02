@@ -148,6 +148,7 @@ function selectTime(time) {
   console.log(timeString >= time);
   console.log(timeString >= timeString); 
   console.log(timeString >= ('0' + '20').slice(-2) + ':' + '00' + ':00'); 
+  console.log(timeString <= ('0' + '20').slice(-2) + ':' + '00' + ':00'); 
   console.log(('0' + '20').slice(-2) + ':' + '00' + ':00');
   
   var timeBlocks = document.querySelectorAll('.timeBlock');

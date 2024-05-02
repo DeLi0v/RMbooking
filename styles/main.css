@@ -191,3 +191,19 @@ form button:hover {
     border-color: red; /* Цвет границы поля */
     box-shadow: 0 0 5px red; /* Тень поля */
 }
+
+.timeBlock {
+    display: inline-block;
+    width: 80px; /* Ширина блока времени */
+    height: 30px; /* Высота блока времени */
+    margin: 5px; /* Внешний отступ между блоками времени */
+    background-color: #f1f1f1; /* Цвет фона блока времени */
+    text-align: center;
+    line-height: 30px; /* Выравнивание текста по вертикали */
+    cursor: pointer; /* Курсор при наведении */
+}
+
+.timeBlock:hover {
+    background-color: #4CAF50; /* Цвет фона блока времени при наведении */
+    color: white; /* Цвет текста блока времени при наведении */
+}

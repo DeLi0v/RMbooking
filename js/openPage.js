@@ -163,15 +163,20 @@ function selectTime(selectedTime) {
   }
 
   // Подсвечиваем выбранные блоки времени
-  if (booking_time_begin.val() && booking_time_end.val()) {
+  if (booking_time_begin.val()) {
     var startBlock = document.querySelector(
       '[time="' + booking_time_begin.val() + '"]'
     );
+  }
+
+  if (booking_time_end.val()) {
     var endBlock = document.querySelector(
       '[time="' + booking_time_end.val() + '"]'
     );
+  }
 
-    // Подсвечиваем выбранный период времени
+  // Подсвечиваем выбранный период времени
+  if (booking_time_begin.val() && booking_time_end.val()) {
     while (startBlock && startBlock !== endBlock) {
       startBlock.classList.add("select");
       startBlock = startBlock.nextElementSibling;

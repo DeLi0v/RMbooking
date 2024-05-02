@@ -57,24 +57,26 @@ if ($page == "booking") {
         <label for="booking_date">Дата бронирования:
             <input type="date" name="booking_date" id="booking_date" min="<?php echo date('Y-m-d'); ?>" disabled />
         </label>
-        <label for="booking_time_begin">Время начала бронирования:
-            <div class="timeSlots" disabled>
-                <div class="timeBlock">10:00</div>
-                <div class="timeBlock">11:00</div>
-                <div class="timeBlock">12:00</div>
-                <div class="timeBlock">13:00</div>
-                <div class="timeBlock">14:00</div>
-                <div class="timeBlock">15:00</div>
-                <div class="timeBlock">16:00</div>
-                <div class="timeBlock">17:00</div>
-                <div class="timeBlock">18:00</div>
-                <div class="timeBlock">19:00</div>
-                <div class="timeBlock">20:00</div>
-                <div class="timeBlock">21:00</div>
+        <label for="booking_time_begin">Время бронирования:
+            <div class="timeSlots" required>
+                <div class="timeBlock" onclick="selectTime(10)">10:00</div>
+                <div class="timeBlock" onclick="selectTime(11)">11:00</div>
+                <div class="timeBlock" onclick="selectTime(12)">12:00</div>
+                <div class="timeBlock" onclick="selectTime(13)">13:00</div>
+                <div class="timeBlock" onclick="selectTime(14)">14:00</div>
+                <div class="timeBlock" onclick="selectTime(15)">15:00</div>
+                <div class="timeBlock" onclick="selectTime(16)">16:00</div>
+                <div class="timeBlock" onclick="selectTime(17)">17:00</div>
+                <div class="timeBlock" onclick="selectTime(18)">18:00</div>
+                <div class="timeBlock" onclick="selectTime(19)">19:00</div>
+                <div class="timeBlock" onclick="selectTime(20)">20:00</div>
+                <div class="timeBlock" onclick="selectTime(21)">21:00</div>
+                <div class="timeBlock" onclick="selectTime(22)">22:00</div>
             </div>
-            <input type="time" name="booking_time_begin" id="booking_time_begin" disabled />
+            <input type="hidden" name="booking_time_begin" id="booking_time_begin" value="" />
+            <input type="hidden" name="booking_time_end" id="booking_time_end" value="" />
         </label>
-        <label for="booking_time_end">Время окончания бронирования:
+        <!-- <label for="booking_time_end">Время окончания бронирования:
             <div id="timeSlots">
                 <div class="timeBlock">11:00</div>
                 <div class="timeBlock">12:00</div>
@@ -89,8 +91,8 @@ if ($page == "booking") {
                 <div class="timeBlock">21:00</div>
                 <div class="timeBlock">22:00</div>
             </div>
-            <!-- <input type="time" name="booking_time_end" id="booking_time_end" disabled /> -->
-        </label>
+            <input type="time" name="booking_time_end" id="booking_time_end" disabled />
+        </label> -->
         <label for="sum">Сумма:
             <input type="text" name="sum" id="sum" disabled />
         </label>
@@ -142,6 +144,12 @@ if ($page == "booking") {
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
 
+                var timeBlocks = document.querySelectorAll('.timeBlock');
+                timeBlocks.forEach(function(block) {
+                    block.classList.remove('select');
+                });
+
+
                 $.ajax({
                     url: "/components/get_rooms.php",
                     method: "POST",
@@ -161,6 +169,10 @@ if ($page == "booking") {
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
                 $("#create").prop("disabled", true);
+                var timeBlocks = document.querySelectorAll('.timeBlock');
+                timeBlocks.forEach(function(block) {
+                    block.classList.remove('select');
+                });
             }
         });
 
@@ -170,12 +182,20 @@ if ($page == "booking") {
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
+                var timeBlocks = document.querySelectorAll('.timeBlock');
+                timeBlocks.forEach(function(block) {
+                    block.classList.remove('select');
+                });
             } else {
                 $("#booking_date").prop("disabled", true).val("");
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
                 $("#create").prop("disabled", true);
+                var timeBlocks = document.querySelectorAll('.timeBlock');
+                timeBlocks.forEach(function(block) {
+                    block.classList.remove('select');
+                });
             }
         });
 
@@ -184,11 +204,19 @@ if ($page == "booking") {
                 $("#booking_time_begin").prop("disabled", false).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
+                var timeBlocks = document.querySelectorAll('.timeBlock');
+                timeBlocks.forEach(function(block) {
+                    block.classList.remove('select');
+                });
             } else {
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
                 $("#create").prop("disabled", true);
+                var timeBlocks = document.querySelectorAll('.timeBlock');
+                timeBlocks.forEach(function(block) {
+                    block.classList.remove('select');
+                });
             }
         });
 

@@ -138,3 +138,40 @@ function saveEdit(evt, page, id) {
     },
   });
 }
+
+function selectTime(time) {
+
+  var timeString = ('0' + time).slice(-2) + ':' + '00' + ':00';
+
+  console.log(time);
+  console.log(timeString);
+  console.log(timeString >= time);
+    
+  var timeBlocks = document.querySelectorAll('.timeBlock');
+  timeBlocks.forEach(function(block) {
+    block.classList.remove('select');
+  });
+
+  var booking_time_begin = $("input[name='booking_time_begin']").eq(0);
+  var booking_time_end = $("input[name='booking_time_end']").eq(0);
+
+  if (booking_time_begin.val() || (!booking_time_end.val() && time <= booking_time_begin.val())) {
+    booking_time_begin.val(time)
+    // selectedStartTime = time;
+  } else {
+    booking_time_end.val(time)
+  }
+
+  // Подсвечиваем выбранные блоки времени
+  if (selectedStartTime && selectedEndTime) {
+      var startBlock = document.querySelector('[data-time="' + selectedStartTime + '"]');
+      var endBlock = document.querySelector('[data-time="' + selectedEndTime + '"]');
+      
+      // Подсвечиваем выбранный период времени
+      while (startBlock && startBlock !== endBlock) {
+          startBlock.classList.add('select');
+          startBlock = startBlock.nextElementSibling;
+      }
+      endBlock.classList.add('select');
+  }
+}

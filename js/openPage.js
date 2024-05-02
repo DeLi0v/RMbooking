@@ -139,17 +139,9 @@ function saveEdit(evt, page, id) {
   });
 }
 
-function selectTime(time) {
+function selectTime(selectedTime) {
 
-  var timeString = ('0' + time).slice(-2) + ':' + '00' + ':00';
-
-  console.log(time);
-  console.log(timeString);
-  console.log(timeString >= time);
-  console.log(timeString >= timeString); 
-  console.log(timeString >= ('0' + '20').slice(-2) + ':' + '00' + ':00'); 
-  console.log(timeString <= ('0' + '20').slice(-2) + ':' + '00' + ':00'); 
-  console.log(('0' + '20').slice(-2) + ':' + '00' + ':00');
+  var time = ('0' + selectedTime).slice(-2) + ':' + '00' + ':00';
   
   var timeBlocks = document.querySelectorAll('.timeBlock');
   timeBlocks.forEach(function(block) {
@@ -167,9 +159,9 @@ function selectTime(time) {
   }
 
   // Подсвечиваем выбранные блоки времени
-  if (selectedStartTime && selectedEndTime) {
-      var startBlock = document.querySelector('[data-time="' + selectedStartTime + '"]');
-      var endBlock = document.querySelector('[data-time="' + selectedEndTime + '"]');
+  if (booking_time_begin.val() && booking_time_end.val()) {
+      var startBlock = document.querySelector('[time="' + booking_time_begin.val() + '"]');
+      var endBlock = document.querySelector('[time="' + booking_time_end.val() + '"]');
       
       // Подсвечиваем выбранный период времени
       while (startBlock && startBlock !== endBlock) {

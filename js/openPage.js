@@ -140,39 +140,44 @@ function saveEdit(evt, page, id) {
 }
 
 function selectTime(selectedTime) {
+  var time = ("0" + selectedTime).slice(-2) + ":" + "00" + ":00";
 
-  var time = ('0' + selectedTime).slice(-2) + ':' + '00' + ':00';
-  
-  var timeBlocks = document.querySelectorAll('.timeBlock');
-  timeBlocks.forEach(function(block) {
-    block.classList.remove('select');
+  var timeBlocks = document.querySelectorAll(".timeBlock");
+  timeBlocks.forEach(function (block) {
+    block.classList.remove("select");
   });
 
   var booking_time_begin = $("input[name='booking_time_begin']").eq(0);
   var booking_time_end = $("input[name='booking_time_end']").eq(0);
 
-  if (booking_time_begin.val() || (!booking_time_end.val() && time <= booking_time_begin.val())) {
-    booking_time_begin.val(time)
+  if (
+    !booking_time_begin.val() ||
+    (booking_time_end.val() && time <= booking_time_begin.val())
+  ) {
+    booking_time_begin.val(time);
     console.log("su");
     // selectedStartTime = time;
   } else {
-    booking_time_end.val(time)
+    booking_time_end.val(time);
     console.log("suuu");
   }
 
   // Подсвечиваем выбранные блоки времени
   if (booking_time_begin.val() && booking_time_end.val()) {
-      var startBlock = document.querySelector('[time="' + booking_time_begin.val() + '"]');
-      var endBlock = document.querySelector('[time="' + booking_time_end.val() + '"]');
-      
-      // Подсвечиваем выбранный период времени
-      while (startBlock && startBlock !== endBlock) {
-          startBlock.classList.add('select');
-          startBlock = startBlock.nextElementSibling;
-      }
-      endBlock.classList.add('select');
-      console.log("i am here");
+    var startBlock = document.querySelector(
+      '[time="' + booking_time_begin.val() + '"]'
+    );
+    var endBlock = document.querySelector(
+      '[time="' + booking_time_end.val() + '"]'
+    );
+
+    // Подсвечиваем выбранный период времени
+    while (startBlock && startBlock !== endBlock) {
+      startBlock.classList.add("select");
+      startBlock = startBlock.nextElementSibling;
+    }
+    endBlock.classList.add("select");
+    console.log("i am here");
   }
   console.log("click");
-
 }

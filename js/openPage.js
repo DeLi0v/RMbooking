@@ -169,5 +169,8 @@ function selectTime(selectedTime) {
           startBlock = startBlock.nextElementSibling;
       }
       endBlock.classList.add('select');
+      console.log("i am here");
   }
+  console.log("click");
+
 }

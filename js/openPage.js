@@ -151,17 +151,18 @@ function selectTime(selectedTime) {
   var booking_time_end = $("input[name='booking_time_end']").eq(0);
 
   if (booking_time_begin.val() && booking_time_end.val()) {
+    $("#timeSlots").attr("required", true);
     booking_time_begin.val(time);
     booking_time_end.val("");
-  } else if (
-    !booking_time_begin.val() ||
-    (booking_time_end.val() && time <= booking_time_begin.val())
-  ) {
+  } else if (!booking_time_begin.val()) {
+    $("#timeSlots").attr("required", true);
     booking_time_begin.val(time);
   } else if (!booking_time_end.val() && time <= booking_time_begin.val()) {
+    $("#timeSlots").attr("required", true);
     booking_time_end.val(booking_time_begin.val());
     booking_time_begin.val(time);
   } else {
+    $("#timeSlots").attr("required", true);
     booking_time_end.val(time);
   }
 
@@ -182,6 +183,8 @@ function selectTime(selectedTime) {
 
   // Подсвечиваем выбранный период времени
   if (booking_time_begin.val() && booking_time_end.val()) {
+    $("#timeSlots").attr("required", false);
+
     while (startBlock && startBlock !== endBlock) {
       startBlock.classList.add("select");
       startBlock = startBlock.nextElementSibling;

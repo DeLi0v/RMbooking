@@ -203,12 +203,12 @@ form button:hover {
     cursor: pointer; /* Курсор при наведении */
 }
 
-.timeSlots .timeBlock:hover {
+.timeSlots .timeBlock:not(.off):hover {
     background-color: #4CAF50; /* Цвет фона блока времени при наведении */
     color: white; /* Цвет текста блока времени при наведении */
 }
 
-.timeSlots .timeBlock:disabled {
+.timeSlots .timeBlock.off {
     opacity: 0.5;
     cursor: default;
 }

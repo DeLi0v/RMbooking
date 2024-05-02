@@ -150,16 +150,16 @@ function selectTime(selectedTime) {
   var booking_time_begin = $("input[name='booking_time_begin']").eq(0);
   var booking_time_end = $("input[name='booking_time_end']").eq(0);
 
-  if (
+  if (booking_time_begin.val() && booking_time_end.val()) {
+    booking_time_begin.val(time);
+    booking_time_end.val("");
+  } else if (
     !booking_time_begin.val() ||
     (booking_time_end.val() && time <= booking_time_begin.val())
   ) {
     booking_time_begin.val(time);
-    console.log("su");
-    // selectedStartTime = time;
   } else {
     booking_time_end.val(time);
-    console.log("suuu");
   }
 
   // Подсвечиваем выбранные блоки времени
@@ -177,7 +177,5 @@ function selectTime(selectedTime) {
       startBlock = startBlock.nextElementSibling;
     }
     endBlock.classList.add("select");
-    console.log("i am here");
   }
-  console.log("click");
 }

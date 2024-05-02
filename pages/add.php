@@ -58,36 +58,36 @@ if ($page == "booking") {
             <input type="date" name="booking_date" id="booking_date" min="<?php echo date('Y-m-d'); ?>" disabled />
         </label>
         <label for="booking_time_begin">Время начала бронирования:
-            <div id="timeSlots">
-                <div class="timeBlock">10</div>
-                <div class="timeBlock">11</div>
-                <div class="timeBlock">12</div>
-                <div class="timeBlock">13</div>
-                <div class="timeBlock">14</div>
-                <div class="timeBlock">15</div>
-                <div class="timeBlock">16</div>
-                <div class="timeBlock">17</div>
-                <div class="timeBlock">18</div>
-                <div class="timeBlock">19</div>
-                <div class="timeBlock">20</div>
-                <div class="timeBlock">21</div>
+            <div class="timeSlots" disabled>
+                <div class="timeBlock">10:00</div>
+                <div class="timeBlock">11:00</div>
+                <div class="timeBlock">12:00</div>
+                <div class="timeBlock">13:00</div>
+                <div class="timeBlock">14:00</div>
+                <div class="timeBlock">15:00</div>
+                <div class="timeBlock">16:00</div>
+                <div class="timeBlock">17:00</div>
+                <div class="timeBlock">18:00</div>
+                <div class="timeBlock">19:00</div>
+                <div class="timeBlock">20:00</div>
+                <div class="timeBlock">21:00</div>
             </div>
             <input type="time" name="booking_time_begin" id="booking_time_begin" disabled />
         </label>
         <label for="booking_time_end">Время окончания бронирования:
             <div id="timeSlots">
-                <div class="timeBlock">11</div>
-                <div class="timeBlock">12</div>
-                <div class="timeBlock">13</div>
-                <div class="timeBlock">14</div>
-                <div class="timeBlock">15</div>
-                <div class="timeBlock">16</div>
-                <div class="timeBlock">17</div>
-                <div class="timeBlock">18</div>
-                <div class="timeBlock">19</div>
-                <div class="timeBlock">20</div>
-                <div class="timeBlock">21</div>
-                <div class="timeBlock">22</div>
+                <div class="timeBlock">11:00</div>
+                <div class="timeBlock">12:00</div>
+                <div class="timeBlock">13:00</div>
+                <div class="timeBlock">14:00</div>
+                <div class="timeBlock">15:00</div>
+                <div class="timeBlock">16:00</div>
+                <div class="timeBlock">17:00</div>
+                <div class="timeBlock">18:00</div>
+                <div class="timeBlock">19:00</div>
+                <div class="timeBlock">20:00</div>
+                <div class="timeBlock">21:00</div>
+                <div class="timeBlock">22:00</div>
             </div>
             <!-- <input type="time" name="booking_time_end" id="booking_time_end" disabled /> -->
         </label>

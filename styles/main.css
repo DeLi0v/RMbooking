@@ -192,7 +192,7 @@ form button:hover {
     box-shadow: 0 0 5px red; /* Тень поля */
 }
 
-.timeBlock {
+.timeSlots .timeBlock {
     display: inline-block;
     width: 80px; /* Ширина блока времени */
     height: 30px; /* Высота блока времени */
@@ -203,7 +203,12 @@ form button:hover {
     cursor: pointer; /* Курсор при наведении */
 }
 
-.timeBlock:hover {
+.timeSlots .timeBlock:hover {
     background-color: #4CAF50; /* Цвет фона блока времени при наведении */
     color: white; /* Цвет текста блока времени при наведении */
+}
+
+.timeSlots:disabled {
+    opacity: 0.5;
+    cursor: default;
 }

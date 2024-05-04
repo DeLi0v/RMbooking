@@ -177,8 +177,8 @@ if ($page == 'booking') {
                 }
                 ?>
             </div>
-            <input type="hidden" name="booking_time_begin" id="booking_time_begin" value="" />
-            <input type="hidden" name="booking_time_end" id="booking_time_end" value="" />
+            <input type="hidden" name="booking_time_begin" id="booking_time_begin" value="<?php echo $rowBooking['booking_time_begin'] ?>" />
+            <input type="hidden" name="booking_time_end" id="booking_time_end" value="<?php echo $rowBooking['booking_time_end'] ?>" />
         </label>
         <label for="sum">Сумма:
             <input type="text" name="sum" id="sum" value="<?php echo $rowBooking["sum"] ?>" />

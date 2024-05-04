@@ -167,6 +167,9 @@ function selectTime(selectedTime) {
 
   var booking_time_begin = $("input[name='booking_time_begin']").eq(0);
   var booking_time_end = $("input[name='booking_time_end']").eq(0);
+  
+  console.log("Time begin: " + booking_time_begin.val());
+  console.log("Time end: " + booking_time_end.val());
 
   if (booking_time_begin.val() && booking_time_end.val()) {
     booking_time_begin.val(time);

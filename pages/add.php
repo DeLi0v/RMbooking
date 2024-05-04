@@ -102,8 +102,9 @@ if ($page == "booking") {
                     // $("#booking_time_begin").prop("disabled", false);
                 }
                 timeBlocks.forEach(function() {
-                if ($("#room").val() !== "" && $("#booking_date").val() !== "" && $(this).hasClass("select") && $("#booking_time_end").val() !== "") {
+                    if ($("#room").val() !== "" && $("#booking_date").val() !== "" && $("#booking_time_end").val() !== "") {
                         $("#sum").prop("disabled", false);
+                        return;
                     }
                 });                
                 // if($("#booking_time_begin").val() !== ""){

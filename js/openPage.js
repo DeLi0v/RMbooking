@@ -230,9 +230,10 @@ function selectTime(selectedTime) {
       var totalPrice = price * hours;
       $("#sum").val(totalPrice)
     }
+    console.log("price: " + price);
+    console.log("hours: " + hours);
   } else {
     $("#sum").prop("disabled", true).val("");
   }
-  console.log("price: " + price);
-  console.log("hours: " + hours);
+  console.log($("#room").val())
 }

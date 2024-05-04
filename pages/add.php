@@ -201,6 +201,7 @@ if ($page == "booking") {
                 $("#booking_time_begin").val("");
                 $("#booking_time_end").val("");
                 $("#sum").prop("disabled", true).val("");
+                $("#create").prop("disabled", true);
 
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
@@ -242,6 +243,7 @@ if ($page == "booking") {
                 $("#booking_time_begin").val("");
                 $("#booking_time_end").val("");
                 $("#sum").prop("disabled", true).val("");
+                $("#create").prop("disabled", true);
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');
@@ -266,6 +268,7 @@ if ($page == "booking") {
                 $("#booking_time_begin").val("");
                 $("#booking_time_end").val("");
                 $("#sum").prop("disabled", true).val("");
+                $("#create").prop("disabled", true);
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');

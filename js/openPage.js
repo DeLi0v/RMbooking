@@ -204,6 +204,7 @@ function selectTime(selectedTime) {
       data: { room: $("#room").val() },
       success: function(response) {
           price = response;
+          console.log(response);
       },
       error: function(xhr, status, error) {
           console.error("Ошибка получения списка помещений:", error);

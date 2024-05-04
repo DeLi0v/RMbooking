@@ -200,6 +200,6 @@ function selectTime(selectedTime) {
     endBlock.classList.add("select");
     $("#sum").prop("disabled", false).val("");
   } else {
-    $("#sum").prop("disabled", false).val("");
+    $("#sum").prop("disabled", true).val("");
   }
 }

@@ -150,9 +150,10 @@ if ($page == "booking") {
                 $("#create").prop("disabled", true);
             }
         });
-
+        var client = "";
         $("#client").on("change", function() {
-            if ($(this).val() !== "") {
+            client = $(this).val();
+            if (client !== "") {
                 $("#typeRoom").prop("disabled", false);
                 if ($("#typeRoom").val() !== ""){
                     $("#room").prop("disabled", false);
@@ -273,7 +274,7 @@ if ($page == "booking") {
                 $.ajax({
                     url: "/components/get_time.php",
                     method: "POST",
-                    data: { booking_date: selectedDate },
+                    data: { booking_date: selectedDate, client: client },
                     success: function(response) {
                         $("#timeSlots").html(response);
                     },

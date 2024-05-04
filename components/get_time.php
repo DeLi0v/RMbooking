@@ -5,6 +5,8 @@ $conn = $db->connect();
 mysqli_select_db($conn, $db->database);
 
 $booking_date = $_POST["booking_date"];
+$client = $_POST["client"];
+$timeBlocksFromDB = array();
 
 $sql = "SELECT
             booking_time_begin AS booking_time_begin,

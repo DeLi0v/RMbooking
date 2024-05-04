@@ -156,7 +156,6 @@ if ($page == "booking") {
                 $("#typeRoom").prop("disabled", false);
                 if ($("#typeRoom").val() !== ""){
                     $("#room").prop("disabled", false);
-                    $("#booking_date").prop("disabled", false);
                 }
                 if($("#typeRoom").val() !== "" && $("#room").val() !== ""){
                     $("#room").prop("disabled", false);

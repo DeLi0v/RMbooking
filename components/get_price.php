@@ -16,7 +16,7 @@ $result = mysqli_query($conn, $sql);
 $price = 0;
 if (mysqli_num_rows($result) > 0) { 
     $row = mysqli_fetch_assoc($result);
-    $price = $row["price"];
+    $price = $row["cost"];
 }
 $db->close();
 echo $price;

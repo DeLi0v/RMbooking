@@ -204,7 +204,6 @@ function selectTime(selectedTime) {
       data: { room: $("#room").val() },
       success: function(response) {
           price = response;
-          console.log(response);
       },
       error: function(xhr, status, error) {
           console.error("Ошибка получения списка помещений:", error);
@@ -231,10 +230,7 @@ function selectTime(selectedTime) {
       var totalPrice = price * hours;
       $("#sum").val(totalPrice)
     }
-    console.log("price: " + price);
-    console.log("hours: " + hours);
   } else {
     $("#sum").prop("disabled", true).val("");
   }
-  console.log($("#room").val())
 }

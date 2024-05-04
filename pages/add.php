@@ -263,16 +263,31 @@ if ($page == "booking") {
         });
 
         $("#booking_date").on("change", function() {
-            if ($(this).val() !== "") {
+            var selectedDate = $(this).val();
+            if (selectedDate !== "") {
                 $("#booking_time_begin").val("");
                 $("#booking_time_end").val("");
                 $("#sum").prop("disabled", true).val("");
                 $("#create").prop("disabled", true);
+                
+                $.ajax({
+                    url: "/components/get_time.php",
+                    method: "POST",
+                    data: { booking_date: selectedDate },
+                    success: function(response) {
+                        $("#timeSlots").html(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Ошибка получения списка времени:", error);
+                    }
+                });
+
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');
                     block.classList.remove("off");
                 });
+
             } else {
                 $("#booking_time_begin").prop("disabled", true).val("");
                 $("#booking_time_end").prop("disabled", true).val("");
@@ -281,6 +296,7 @@ if ($page == "booking") {
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');
+                    block.classList.remove('selectedOther');
                     block.classList.add("off");
                 });
             }

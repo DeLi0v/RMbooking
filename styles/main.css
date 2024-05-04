@@ -212,7 +212,8 @@ form button:hover {
     background-color: #4CAF50;
 }
 
-.timeSlots .timeBlock.off {
+.timeSlots .timeBlock.off, 
+.timeSlots .timeBlock.selectedOther {
     opacity: 0.5;
     cursor: default;
 }

@@ -144,13 +144,19 @@ function selectTime(selectedTime) {
   var time = ("0" + selectedTime).slice(-2) + ":" + "00" + ":00";
 
   var timeBlocks = document.querySelectorAll(".timeBlock");
+  var stop = false;
   timeBlocks.forEach(function (block) {
     if (block.classList.contains("off")) {
+      stop = true;
       return;
     } else {
       block.classList.remove("select"); 
     }
   });
+
+  if (stop) {
+    return;
+  }
 
   var booking_time_begin = $("input[name='booking_time_begin']").eq(0);
   var booking_time_end = $("input[name='booking_time_end']").eq(0);

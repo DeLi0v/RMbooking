@@ -92,7 +92,7 @@ if ($page == "booking") {
                     $("#booking_date").prop("disabled", false);
                 }
                 var timeBlocks = document.querySelectorAll(".timeBlock");
-                if($("#booking_date").val() !== ""){
+                if($("#room").val() !== "" && $("#booking_date").val() !== ""){
                     $("#booking_date").prop("disabled", false);
                     
                     timeBlocks.forEach(function (block) {
@@ -102,7 +102,7 @@ if ($page == "booking") {
                     // $("#booking_time_begin").prop("disabled", false);
                 }
                 timeBlocks.each(function() {
-                if ($(this).hasClass("select")) {
+                if ($("#room").val() !== "" && $("#booking_date").val() !== "" && $(this).hasClass("select") && $("#booking_time_end").val() !== "") {
                         $("#sum").prop("disabled", false);
                     }
                 });                
@@ -114,7 +114,7 @@ if ($page == "booking") {
                 //     $("#booking_time_end").prop("disabled", false);
                 //     $("#sum").prop("disabled", false);
                 // }
-                if($("#sum").val() !== ""){
+                if($("#room").val() !== "" && $("#booking_date").val() !== "" && $("#booking_time_end").val() !== "" &&  $("#sum").val() !== ""){
                     $("#sum").prop("disabled", false);
                     $("#create").prop("disabled", false);
                 }

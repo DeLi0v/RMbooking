@@ -105,6 +105,32 @@ if ($page == 'booking') {
         <label for="room">Помещение:
             <select name="room" id="room">
                 <option value="">--Помещение не выбрано--</option>
+                <?php
+                $type = $rowBooking["roomType"];
+                $room = $_POST["idRoom"];
+                
+                $sql = "SELECT
+                            id AS id,
+                            name AS name,
+                            description AS description,
+                            address AS address,
+                            cost AS cost
+                        FROM Rooms
+                        WHERE
+                            type = '$type'";
+                
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) { 
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        if ($room !== null && $room !== "") {
+                            $selected = ($room == $row['id']) ? 'selected' : '';
+                            echo "<option value='". $row['id'] ."' $selected>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
+                        } else {
+                            echo "<option value='". $row['id'] ."'>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
+                        }
+                    }
+                }
+                ?>
             </select>
         </label>
         <label for="booking_date">Дата бронирования:
@@ -116,6 +142,9 @@ if ($page == 'booking') {
                 $timeBlocksFromDB = array();
                 $clientTimeBlocksFromDB = array();
 
+                $booking_date = $rowBooking['booking_date'];
+                $room = $rowBooking['idRoom'];
+                
                 $sql = "SELECT
                     booking_time_begin AS booking_time_begin,
                     booking_time_end AS booking_time_end,

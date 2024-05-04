@@ -227,7 +227,8 @@ function selectTime(selectedTime) {
     endBlock.classList.add("select");
     $("#sum").prop("disabled", false).val("");
     if (price != 0 && hours != 0) {
-      $("#sum").val(price * hours)
+      var totalPrice = price * hours;
+      $("#sum").val(totalPrice)
     }
   } else {
     $("#sum").prop("disabled", true).val("");

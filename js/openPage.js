@@ -174,10 +174,10 @@ function selectTime(selectedTime) {
   } else if (!booking_time_begin.val()) {
     booking_time_begin.val(time);
   } else if (!booking_time_end.val() && time <= booking_time_begin.val()) {
-    booking_time_end.val(booking_time_begin.val().replace(/\d{2}:\d{2}$/, "59:59"));
+    booking_time_end.val(booking_time_begin.val());
     booking_time_begin.val(time);
   } else {
-    booking_time_end.val(time.replace(/\d{2}:\d{2}$/, "59:59"));
+    booking_time_end.val(time);
   }
 
   // Подсвечиваем выбранные блоки времени
@@ -194,6 +194,8 @@ function selectTime(selectedTime) {
     var endBlock = document.querySelector(
       '[time="' + booking_time_end.val() + '"]'
     );
+
+    booking_time_end.val(time.replace(/\d{2}:\d{2}$/, "59:59"));
 
     while (startBlock && startBlock !== endBlock) {
       if (startBlock.classList.contains("selectedOther")) {

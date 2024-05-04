@@ -227,6 +227,7 @@ function selectTime(selectedTime) {
     }
     endBlock.classList.add("select");
     $("#sum").prop("disabled", false).val("");
+    $("#create").prop("disabled", false);
     if (price != 0 && hours != 0) {
       var totalPrice = price * hours;
       $("#sum").val(totalPrice)
@@ -235,5 +236,6 @@ function selectTime(selectedTime) {
     console.log("Hours: " + hours);
   } else {
     $("#sum").prop("disabled", true).val("");
+    $("#create").prop("disabled", true);
   }
 }

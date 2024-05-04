@@ -24,7 +24,7 @@ if (mysqli_num_rows($result) > 0) {
         $start_time = $row['booking_time_begin'];
         $end_time = $row['booking_time_end'];
         while ($start_time <= $end_time) {
-            $timeBlocksFromDB[] = date("H:i:s", $start_time);
+            $timeBlocksFromDB[] = $hour = $start_time->format("H");;
             $start_time += 3600; // Увеличиваем на час
         }
     }
@@ -38,9 +38,9 @@ for ($hour = 10; $hour <= 22; $hour++) {
     // Форматируем время в формат "час:00:00"
     $time = sprintf("%02d:00:00", $hour);
     // Создаем класс timeBlock с временем и проверяем, есть ли это время в массиве времени из БД
-    $class = (in_array($time, $timeBlocksFromDB)) ? 'timeBlock selectedOther' : 'timeBlock';
+    $class = (in_array($hour, $timeBlocksFromDB)) ? 'timeBlock selectedOther' : 'timeBlock';
     // Выводим блок времени
-    echo '<div class="' . $class . '" time="' . $time . '" onclick="selectTime(' . $hour . ')">' . $hour . ':00</div>';
+    echo '<div class="' . $class . '" time="' . $hour . ':00:00" onclick="selectTime(' . $hour . ')">' . $hour . ':00</div>';
 }
 ?>
 <!-- 

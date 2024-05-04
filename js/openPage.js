@@ -198,5 +198,8 @@ function selectTime(selectedTime) {
       startBlock = startBlock.nextElementSibling;
     }
     endBlock.classList.add("select");
+    $("#sum").prop("disabled", false).val("");
+  } else {
+    $("#sum").prop("disabled", false).val("");
   }
 }

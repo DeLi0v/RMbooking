@@ -34,7 +34,7 @@ for ($hour = 10; $hour <= 22; $hour++) {
     // Форматируем время в формат "час:00:00"
     $time = sprintf("%02d:00:00", $hour);
     // Создаем класс timeBlock с временем и проверяем, есть ли это время в массиве времени из БД
-    $class = (in_array($time, $timeBlocksFromDB)) ? 'timeBlock selectedOther' : 'timeBlock off';
+    $class = (in_array($time, $timeBlocksFromDB)) ? 'timeBlock selectedOther' : 'timeBlock';
     // Выводим блок времени
     echo '<div class="' . $class . '" time="' . $time . '" onclick="selectTime(' . $hour . ')">' . $hour . ':00</div>';
 }

@@ -131,7 +131,7 @@ if ($page == 'booking') {
                         $start_time = new DateTime($row['booking_time_begin']);
                         $end_time = new DateTime($row['booking_time_end']);
                         while ($start_time <= $end_time) {
-                            if ($client !== null && $client !== "" && $row["client"] == $client) {
+                            if ($rowBooking["idClient"] == $row["client"]) {
                                 $clientTimeBlocksFromDB[] = $start_time->format("H");;
                             }
                             $timeBlocksFromDB[] = $start_time->format("H");;
@@ -146,9 +146,7 @@ if ($page == 'booking') {
                     $time = sprintf("%02d:00:00", $hour);
                     // Создаем класс timeBlock с временем и проверяем, есть ли это время в массиве времени из БД
                     $class = (in_array($hour, $timeBlocksFromDB)) ? 'timeBlock selectedOther' : 'timeBlock';
-                    if ($client !== null && $client !== "" && $row["client"] == $client) {
-                        $class = (in_array($hour, $clientTimeBlocksFromDB)) ? 'timeBlock select' : 'timeBlock';
-                    }
+                    $class = (in_array($hour, $clientTimeBlocksFromDB)) ? 'timeBlock select' : $class;
                     // Выводим блок времени
                     echo '<div class="' . $class . '" time="' . $hour . ':00:00" onclick="selectTime(' . $hour . ')">' . $hour . ':00</div>';
                 }

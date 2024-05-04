@@ -31,7 +31,8 @@ if ($page == "booking") {
                 ?>
             </select>
         </label>
-        <select name="client" id="client" disabled>
+        <label for="client">Клиент:
+            <select name="client" id="client" disabled>
                 <option value="">--Клиент не выбран--</option>
                 
                 <?php 

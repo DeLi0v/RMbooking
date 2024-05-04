@@ -189,12 +189,12 @@ function selectTime(selectedTime) {
     startBlock.classList.add("select");
   }
 
-  if (booking_time_end.val()) {
-    var endBlock = document.querySelector(
-      '[time="' + booking_time_end.val() + '"]'
-    );
-    endBlock.classList.add("select");
-  }
+  // if (booking_time_end.val()) {
+  //   var endBlock = document.querySelector(
+  //     '[time="' + booking_time_end.val() + '"]'
+  //   );
+  //   endBlock.classList.add("select");
+  // }
 
   // Подсвечиваем выбранный период времени
   if (booking_time_begin.val() && booking_time_end.val()) {

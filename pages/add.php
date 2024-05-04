@@ -59,19 +59,19 @@ if ($page == "booking") {
         </label>
         <label for="booking_time_begin">Время бронирования:
             <div class="timeSlots" id="timeSlots" required>
-                <div class="timeBlock" time="10:00:00" onclick="selectTime(10)">10:00</div>
-                <div class="timeBlock" time="11:00:00" onclick="selectTime(11)">11:00</div>
-                <div class="timeBlock" time="12:00:00" onclick="selectTime(12)">12:00</div>
-                <div class="timeBlock" time="13:00:00" onclick="selectTime(13)">13:00</div>
-                <div class="timeBlock" time="14:00:00" onclick="selectTime(14)">14:00</div>
-                <div class="timeBlock" time="15:00:00" onclick="selectTime(15)">15:00</div>
-                <div class="timeBlock" time="16:00:00" onclick="selectTime(16)">16:00</div>
-                <div class="timeBlock" time="17:00:00" onclick="selectTime(17)">17:00</div>
-                <div class="timeBlock" time="18:00:00" onclick="selectTime(18)">18:00</div>
-                <div class="timeBlock" time="19:00:00" onclick="selectTime(19)">19:00</div>
-                <div class="timeBlock" time="20:00:00" onclick="selectTime(20)">20:00</div>
-                <div class="timeBlock" time="21:00:00" onclick="selectTime(21)">21:00</div>
-                <div class="timeBlock" time="22:00:00" onclick="selectTime(22)">22:00</div>
+                <div class="timeBlock off" time="10:00:00" onclick="selectTime(10)">10:00</div>
+                <div class="timeBlock off" time="11:00:00" onclick="selectTime(11)">11:00</div>
+                <div class="timeBlock off" time="12:00:00" onclick="selectTime(12)">12:00</div>
+                <div class="timeBlock off" time="13:00:00" onclick="selectTime(13)">13:00</div>
+                <div class="timeBlock off" time="14:00:00" onclick="selectTime(14)">14:00</div>
+                <div class="timeBlock off" time="15:00:00" onclick="selectTime(15)">15:00</div>
+                <div class="timeBlock off" time="16:00:00" onclick="selectTime(16)">16:00</div>
+                <div class="timeBlock off" time="17:00:00" onclick="selectTime(17)">17:00</div>
+                <div class="timeBlock off" time="18:00:00" onclick="selectTime(18)">18:00</div>
+                <div class="timeBlock off" time="19:00:00" onclick="selectTime(19)">19:00</div>
+                <div class="timeBlock off" time="20:00:00" onclick="selectTime(20)">20:00</div>
+                <div class="timeBlock off" time="21:00:00" onclick="selectTime(21)">21:00</div>
+                <div class="timeBlock off" time="22:00:00" onclick="selectTime(22)">22:00</div>
             </div>
             <input type="hidden" name="booking_time_begin" id="booking_time_begin" value="" />
             <input type="hidden" name="booking_time_end" id="booking_time_end" value="" />

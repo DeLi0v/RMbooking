@@ -145,8 +145,15 @@ function selectTime(selectedTime) {
 
   var timeBlocks = document.querySelectorAll(".timeBlock");
   var stop = false;
+
+
+  var selectedBlock = document.querySelector('[value="' + time + '"]');
+  if (selectedBlock && selectedBlock.classList.contains("selectedOther")) {
+    return;
+  }  
+
   timeBlocks.forEach(function (block) {
-    if (block.classList.contains("off") || block.classList.contains("selectedOther")) {
+    if (block.classList.contains("off")) {
       stop = true;
       return;
     } else {

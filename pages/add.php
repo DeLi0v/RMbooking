@@ -91,18 +91,29 @@ if ($page == "booking") {
                     $("#room").prop("disabled", false);
                     $("#booking_date").prop("disabled", false);
                 }
+                var timeBlocks = document.querySelectorAll(".timeBlock");
                 if($("#booking_date").val() !== ""){
                     $("#booking_date").prop("disabled", false);
-                    $("#booking_time_begin").prop("disabled", false);
+                    
+                    timeBlocks.forEach(function (block) {
+                        block.classList.remove("off");
+                    });
+                    
+                    // $("#booking_time_begin").prop("disabled", false);
                 }
-                if($("#booking_time_begin").val() !== ""){
-                    $("#booking_time_begin").prop("disabled", false);
-                    $("#booking_time_end").prop("disabled", false);
-                }
-                if($("#booking_time_end").val() !== ""){
-                    $("#booking_time_end").prop("disabled", false);
-                    $("#sum").prop("disabled", false);
-                }
+                timeBlocks.each(function() {
+                if ($(this).hasClass("select")) {
+                        $("#sum").prop("disabled", false);
+                    }
+                });                
+                // if($("#booking_time_begin").val() !== ""){
+                //     $("#booking_time_begin").prop("disabled", false);
+                //     $("#booking_time_end").prop("disabled", false);
+                // }
+                // if($("#booking_time_end").val() !== ""){
+                //     $("#booking_time_end").prop("disabled", false);
+                //     $("#sum").prop("disabled", false);
+                // }
                 if($("#sum").val() !== ""){
                     $("#sum").prop("disabled", false);
                     $("#create").prop("disabled", false);
@@ -111,8 +122,12 @@ if ($page == "booking") {
                 $("#typeRoom").prop("disabled", true);
                 $("#room").prop("disabled", true);
                 $("#booking_date").prop("disabled", true);
-                $("#booking_time_begin").prop("disabled", true);
-                $("#booking_time_end").prop("disabled", true);
+                var timeBlocks = document.querySelectorAll(".timeBlock");
+                timeBlocks.forEach(function (block) {
+                        block.classList.add("off");
+                });
+                // $("#booking_time_begin").prop("disabled", true);
+                // $("#booking_time_end").prop("disabled", true);
                 $("#sum").prop("disabled", true);
                 $("#create").prop("disabled", true);
             }
@@ -123,13 +138,14 @@ if ($page == "booking") {
             if (selectedType !== "") {
                 $("#room").prop("disabled", false).val("");
                 $("#booking_date").prop("disabled", true).val("");
-                $("#booking_time_begin").prop("disabled", true).val("");
-                $("#booking_time_end").prop("disabled", true).val("");
+                $("#booking_time_begin").val("");
+                $("#booking_time_end").val("");
                 $("#sum").prop("disabled", true).val("");
 
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');
+                    block.classList.add("off");
                 });
 
 
@@ -148,13 +164,14 @@ if ($page == "booking") {
             } else {
                 $("#room").prop("disabled", true).val("");
                 $("#booking_date").prop("disabled", true).val("");
-                $("#booking_time_begin").prop("disabled", true).val("");
-                $("#booking_time_end").prop("disabled", true).val("");
+                $("#booking_time_begin").val("");
+                $("#booking_time_end").val("");
                 $("#sum").prop("disabled", true).val("");
                 $("#create").prop("disabled", true);
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');
+                    block.classList.add("off");
                 });
             }
         });
@@ -162,34 +179,37 @@ if ($page == "booking") {
         $("#room").on("change", function() {
             if ($(this).val() !== "") {
                 $("#booking_date").prop("disabled", false).val("");
-                $("#booking_time_begin").prop("disabled", true).val("");
-                $("#booking_time_end").prop("disabled", true).val("");
+                $("#booking_time_begin").val("");
+                $("#booking_time_end").val("");
                 $("#sum").prop("disabled", true).val("");
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');
+                    block.classList.add("off");
                 });
             } else {
                 $("#booking_date").prop("disabled", true).val("");
-                $("#booking_time_begin").prop("disabled", true).val("");
-                $("#booking_time_end").prop("disabled", true).val("");
+                $("#booking_time_begin").val("");
+                $("#booking_time_end").val("");
                 $("#sum").prop("disabled", true).val("");
                 $("#create").prop("disabled", true);
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');
+                    block.classList.add("off");
                 });
             }
         });
 
         $("#booking_date").on("change", function() {
             if ($(this).val() !== "") {
-                $("#booking_time_begin").prop("disabled", false).val("");
-                $("#booking_time_end").prop("disabled", true).val("");
+                $("#booking_time_begin").val("");
+                $("#booking_time_end").val("");
                 $("#sum").prop("disabled", true).val("");
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');
+                    block.classList.remove("off");
                 });
             } else {
                 $("#booking_time_begin").prop("disabled", true).val("");
@@ -199,16 +219,15 @@ if ($page == "booking") {
                 var timeBlocks = document.querySelectorAll('.timeBlock');
                 timeBlocks.forEach(function(block) {
                     block.classList.remove('select');
+                    block.classList.add("off");
                 });
             }
         });
 
         $("#booking_time_begin").on("change", function() {
             if ($(this).val() !== "") {
-                $("#booking_time_end").prop("disabled", false).val("");
                 $("#sum").prop("disabled", true).val("");
             } else {
-                $("#booking_time_end").prop("disabled", true).val("");
                 $("#sum").prop("disabled", true).val("");
                 $("#create").prop("disabled", true);
             }

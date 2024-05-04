@@ -140,11 +140,16 @@ function saveEdit(evt, page, id) {
 }
 
 function selectTime(selectedTime) {
+
   var time = ("0" + selectedTime).slice(-2) + ":" + "00" + ":00";
 
   var timeBlocks = document.querySelectorAll(".timeBlock");
   timeBlocks.forEach(function (block) {
-    block.classList.remove("select");
+    if (block.classList.contains("off")) {
+      return;
+    } else {
+      block.classList.remove("select"); 
+    }
   });
 
   var booking_time_begin = $("input[name='booking_time_begin']").eq(0);

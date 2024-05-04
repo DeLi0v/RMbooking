@@ -101,7 +101,7 @@ if ($page == "booking") {
                     
                     // $("#booking_time_begin").prop("disabled", false);
                 }
-                timeBlocks.each(function() {
+                timeBlocks.forEach(function() {
                 if ($("#room").val() !== "" && $("#booking_date").val() !== "" && $(this).hasClass("select") && $("#booking_time_end").val() !== "") {
                         $("#sum").prop("disabled", false);
                     }

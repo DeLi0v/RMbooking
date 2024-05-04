@@ -10,7 +10,7 @@ $sql = "SELECT
             cost AS cost
         FROM Rooms
         WHERE
-            room = '$room'";
+            id = '$room'";
 
 $result = mysqli_query($conn, $sql);
 $price = 0;

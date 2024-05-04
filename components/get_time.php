@@ -13,7 +13,8 @@ $sql = "SELECT
             booking_time_end AS booking_time_end
         FROM Booking
         WHERE
-            booking_date = '$booking_date'";
+            booking_date = '$booking_date'
+            AND client = '$client'";
 
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) { 

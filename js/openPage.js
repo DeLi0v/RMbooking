@@ -233,4 +233,6 @@ function selectTime(selectedTime) {
   } else {
     $("#sum").prop("disabled", true).val("");
   }
+  console.log("price: " + price);
+  console.log("hours: " + hours);
 }

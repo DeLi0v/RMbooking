@@ -197,6 +197,20 @@ function selectTime(selectedTime) {
 
     booking_time_end.val(time.replace(/\d{2}:\d{2}$/, "59:59"));
 
+    var price = 0;
+    $.ajax({
+      url: "/components/get_price.php",
+      method: "POST",
+      data: { room: $("#room").val() },
+      success: function(response) {
+          price = response;
+      },
+      error: function(xhr, status, error) {
+          console.error("Ошибка получения списка помещений:", error);
+      }
+    });    
+    
+    var hours = 0;
     while (startBlock && startBlock !== endBlock) {
       if (startBlock.classList.contains("selectedOther")) {
         stop = true;
@@ -204,6 +218,7 @@ function selectTime(selectedTime) {
       }
       startBlock.classList.add("select");
       startBlock = startBlock.nextElementSibling;
+      hours++;
     }
     if (stop) {
       booking_time_end.val("");
@@ -211,6 +226,9 @@ function selectTime(selectedTime) {
     }
     endBlock.classList.add("select");
     $("#sum").prop("disabled", false).val("");
+    if (price != 0 && hours != 0) {
+      $("#sum").val(price * hours)
+    }
   } else {
     $("#sum").prop("disabled", true).val("");
   }

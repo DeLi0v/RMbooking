@@ -201,6 +201,7 @@ function selectTime(selectedTime) {
     $.ajax({
       url: "/components/get_price.php",
       method: "POST",
+      async: false,
       data: { room: $("#room").val() },
       success: function(response) {
           price = response;

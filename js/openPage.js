@@ -202,6 +202,7 @@ function selectTime(selectedTime) {
 
     while (startBlock && startBlock !== endBlock) {
       if (startBlock.classList.contains("selectedOther")) {
+        console.log("su");
         stop = true;
         return;
       }
@@ -209,6 +210,7 @@ function selectTime(selectedTime) {
       startBlock = startBlock.nextElementSibling;
     }
     if (stop) {
+      console.log("suuu");
       booking_time_end.val("");
       return;
     }

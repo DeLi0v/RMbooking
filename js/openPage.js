@@ -146,7 +146,7 @@ function selectTime(selectedTime) {
   var timeBlocks = document.querySelectorAll(".timeBlock");
   var stop = false;
   timeBlocks.forEach(function (block) {
-    if (block.classList.contains("off")) {
+    if (block.classList.contains("off") || block.classList.contains("selectedOther")) {
       stop = true;
       return;
     } else {

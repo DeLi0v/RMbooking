@@ -58,7 +58,7 @@ if ($page == "booking") {
             <input type="date" name="booking_date" id="booking_date" min="<?php echo date('Y-m-d'); ?>" disabled />
         </label>
         <label for="booking_time_begin">Время бронирования:
-            <div class="timeSlots" id="timeSlots" required>
+            <div class="timeSlots" id="timeSlots">
                 <div class="timeBlock off" time="10:00:00" onclick="selectTime(10)">10:00</div>
                 <div class="timeBlock off" time="11:00:00" onclick="selectTime(11)">11:00</div>
                 <div class="timeBlock off" time="12:00:00" onclick="selectTime(12)">12:00</div>

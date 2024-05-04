@@ -197,8 +197,8 @@ function selectTime(selectedTime) {
   // }
 
   // Подсвечиваем выбранный период времени
+  stop = false;
   if (booking_time_begin.val() && booking_time_end.val()) {
-    timeSlots.prop("required", false);
 
     while (startBlock && startBlock !== endBlock) {
       if (startBlock.classList.contains("selectedOther")) {

@@ -107,7 +107,7 @@ if ($page == 'booking') {
                 <option value="">--Помещение не выбрано--</option>
                 <?php
                 $type = $rowBooking["roomType"];
-                $room = $_POST["idRoom"];
+                $room = $rowBooking["idRoom"];
                 
                 $sql = "SELECT
                             id AS id,
@@ -122,12 +122,8 @@ if ($page == 'booking') {
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0) { 
                     while ($row = mysqli_fetch_assoc($result)) {
-                        if ($room !== null && $room !== "") {
-                            $selected = ($room == $row['id']) ? 'selected' : '';
-                            echo "<option value='". $row['id'] ."' $selected>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
-                        } else {
-                            echo "<option value='". $row['id'] ."'>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
-                        }
+                        $selected = ($room == $row['id']) ? 'selected' : '';
+                        echo "<option value='". $row['id'] ."' $selected>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
                     }
                 }
                 ?>

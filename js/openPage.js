@@ -201,8 +201,15 @@ function selectTime(selectedTime) {
     timeSlots.prop("required", false);
 
     while (startBlock && startBlock !== endBlock) {
+      if (startBlock.classList.contains("selectedOther")) {
+        stop = true;
+        return;
+      }
       startBlock.classList.add("select");
       startBlock = startBlock.nextElementSibling;
+    }
+    if (stop) {
+      return;
     }
     endBlock.classList.add("select");
     $("#sum").prop("disabled", false).val("");

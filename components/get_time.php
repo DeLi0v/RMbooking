@@ -21,11 +21,11 @@ $sql = "SELECT
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) { 
     while ($row = mysqli_fetch_assoc($result)) {
-        $start_time = $row['booking_time_begin'];
-        $end_time = $row['booking_time_end'];
+        $start_time = new DateTime($row['booking_time_begin']);
+        $end_time = new DateTime($row['booking_time_end']);
         while ($start_time <= $end_time) {
-            $timeBlocksFromDB[] = $hour = $start_time->format("H");;
-            $start_time += 3600; // Увеличиваем на час
+            $timeBlocksFromDB[] = $start_time->format("H");;
+            $start_time->modify('+1 hour'); // Увеличиваем на час
         }
     }
 }

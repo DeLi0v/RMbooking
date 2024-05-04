@@ -7,6 +7,7 @@ $conn = $db->connect();
 mysqli_select_db($conn, $db->database);
 
 $type = $_POST["type"];
+$room = $_POST["room"];
 
 $sql = "SELECT
             id AS id,
@@ -21,7 +22,12 @@ $sql = "SELECT
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) { 
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<option value='". $row['id'] ."'>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
+        if ($room !== null && $room !== "") {
+            $selected = ($room == $row['id']) ? 'selected' : '';
+            echo "<option value='". $row['id'] ."' $selected>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
+        } else {
+            echo "<option value='". $row['id'] ."'>". $row["name"] . " - " . $row["description"] . " - " . $row["cost"] ." руб/ч</option>";
+        }
     }
 }
 $db->close();

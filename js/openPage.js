@@ -233,4 +233,4 @@ function selectTime(selectedTime) {
   } else {
     $("#sum").prop("disabled", true).val("");
   }
-x}
+}

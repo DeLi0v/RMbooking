@@ -18,8 +18,8 @@ $sql = "SELECT
 
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) { 
-    $start_time = strtotime($row['booking_time_begin']);
-    $end_time = strtotime($row['booking_time_end']);
+    $start_time = $row['booking_time_begin'];
+    $end_time = $row['booking_time_end'];
     while ($start_time <= $end_time) {
         $timeBlocksFromDB[] = date("H:i:s", $start_time);
         $start_time += 3600; // Увеличиваем на час

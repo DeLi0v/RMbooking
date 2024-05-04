@@ -211,7 +211,7 @@ function selectTime(selectedTime) {
       }
     });    
     
-    var hours = 0;
+    var hours = 1;
     while (startBlock && startBlock !== endBlock) {
       if (startBlock.classList.contains("selectedOther")) {
         stop = true;

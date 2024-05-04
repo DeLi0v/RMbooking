@@ -209,6 +209,7 @@ function selectTime(selectedTime) {
       startBlock = startBlock.nextElementSibling;
     }
     if (stop) {
+      booking_time_end.val("");
       return;
     }
     endBlock.classList.add("select");

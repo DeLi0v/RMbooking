@@ -6,6 +6,7 @@ mysqli_select_db($conn, $db->database);
 
 $booking_date = $_POST["booking_date"];
 $client = $_POST["client"];
+$room = $_POST["room"];
 $timeBlocksFromDB = array();
 
 $sql = "SELECT
@@ -14,7 +15,8 @@ $sql = "SELECT
         FROM Booking
         WHERE
             booking_date = '$booking_date'
-            AND client = '$client'";
+            AND client <> '$client'
+            AND room = '$room'";
 
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) { 

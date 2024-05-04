@@ -236,9 +236,10 @@ if ($page == "booking") {
                 });
             }
         });
-
+        var room;
         $("#room").on("change", function() {
-            if ($(this).val() !== "") {
+            room = $(this).val();
+            if (room !== "") {
                 $("#booking_date").prop("disabled", false).val("");
                 $("#booking_time_begin").val("");
                 $("#booking_time_end").val("");
@@ -274,7 +275,7 @@ if ($page == "booking") {
                 $.ajax({
                     url: "/components/get_time.php",
                     method: "POST",
-                    data: { booking_date: selectedDate, client: client },
+                    data: { booking_date: selectedDate, client: client, room: room },
                     success: function(response) {
                         $("#timeSlots").html(response);
                     },

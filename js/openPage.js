@@ -154,13 +154,10 @@ function selectTime(selectedTime) {
   var timeBlocks = document.querySelectorAll(".timeBlock");
   var stop = false;
 
-  var selectedBlock = document.querySelector('[value="' + time + '"]').eq(0);
+  var selectedBlock = document.querySelector('[time="' + time + '"]');
   if (selectedBlock && selectedBlock.classList.contains("selectedOther")) {
-    console.log("Time is selected other");
     return;
   }  
-
-  console.log("Time not selected other");
 
   timeBlocks.forEach(function (block) {
     if (block.classList.contains("off")) {

@@ -235,7 +235,7 @@ function selectTime(selectedTime) {
     if (stop) {
       booking_time_end.val("");
 
-      timeBlocks.classList.remove("select");
+      timeBlocks.removeClass("select");
       document.querySelector('[time="' + booking_time_begin.val() + '"]').classList.add("select");
     } else {
       endBlock.classList.add("select");

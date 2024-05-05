@@ -22,19 +22,19 @@
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script> -->
     <script src="/js/openPage.js"></script>
     <script>
-        $(document).ready(function() {
-            // Получаем текущий URL
-            var currentURL = window.location.href;
-            // Если URL указывает на корень, загружаем главную страницу
-            if (currentURL.endsWith("/")) {
-                openPage("booking");
-            } else {
-                // Иначе, загружаем содержимое страницы, указанной в URL
-                var pathArray = currentURL.split("/");
-                var pageName = pathArray[pathArray.length - 1];
-                openPage(pageName);
-            }
-        });
+        // $(document).ready(function() {
+        //     // Получаем текущий URL
+        //     var currentURL = window.location.href;
+        //     // Если URL указывает на корень, загружаем главную страницу
+        //     if (currentURL.endsWith("/")) {
+        //         openPage("booking");
+        //     } else {
+        //         // Иначе, загружаем содержимое страницы, указанной в URL
+        //         var pathArray = currentURL.split("/");
+        //         var pageName = pathArray[pathArray.length - 1];
+        //         openPage(pageName);
+        //     }
+        // });
     </script>
 </body>
 

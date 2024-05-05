@@ -1,6 +1,7 @@
 <button class="addBtn" onclick="addStr(event, 'staff')">Добавить</button>
 
 <?php
+    // подключение к БД
     require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");
 
     $db = new DB_Class();
@@ -10,6 +11,7 @@
     }
     mysqli_select_db($conn, $db->database);
 
+    // формирование запроса для получения данных из БД
     $sql = "SELECT 
                 id AS id,
                 surname AS surname,
@@ -25,8 +27,10 @@
 
     $result = mysqli_query($conn, $sql);
 
+    // если в таблице Staff найдены строки, то формируется таблица
     if (mysqli_num_rows($result) > 0) { ?>
         <table>
+            <!-- Заголовки -->
             <tr>
                 <th>ФИО</th>
                 <th>Должность</th>
@@ -40,6 +44,7 @@
             </tr>
         
         <?php
+        // строки (выводятся, пока есть данные)
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>" . $row["surname"] . " " . $row["name"] . " " . $row["patronymic"] . "</td>";
@@ -58,6 +63,7 @@
         </table>
     <?php
     } else {
+        // иначе выводится сообщение
         echo "<div class='noData'>В таблице нет данных.</div>";
     } 
     $db->close();

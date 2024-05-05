@@ -21,10 +21,7 @@ class DB_Class
         $this->conn = mysqli_connect($this->hostname, $this->username, $this->password, $this->database);
 
         // Проверяем, удалось ли подключиться к базе данных
-        if (!$this->conn) {
-            // header("Location: /");
-            // die("Подключение не удалось: " . mysqli_connect_error());
-        } else {
+        if ($this->conn) {
             $this->conn->set_charset("utf8");
         }
         

@@ -5,6 +5,9 @@
 
     $db = new DB_Class();
     $conn = $db->connect();
+    if (!$conn) {
+        header("Refresh: 0");
+    }
     mysqli_select_db($conn, $db->database);
 
     $sql = "SELECT 
@@ -47,7 +50,7 @@
     </table>
     <?php
     } else {
-        echo "<div>В таблице нет данных.</div>";
+        echo "<div class='noData'>В таблице нет данных.</div>";
     } 
     $db->close();
 ?>

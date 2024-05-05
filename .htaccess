@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+
+# Перенаправление запросов на страницы в .content
+RewriteRule ^(.*)$ index.html [L]

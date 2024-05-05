@@ -6,7 +6,7 @@
     $db = new DB_Class();
     $conn = $db->connect();
     if (!$conn) {
-        header("Refresh: 0");
+        header("Location: /");
     }
     mysqli_select_db($conn, $db->database);
 

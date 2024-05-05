@@ -187,9 +187,6 @@ function selectTime(selectedTime) {
     booking_time_end.val(time);
   }
 
-  console.log("Time begin: " + booking_time_begin.val());
-  console.log("Time end: " + booking_time_end.val());
-
   // Подсвечиваем выбранные блоки времени
   if (booking_time_begin.val()) {
     var startBlock = document.querySelector(
@@ -252,4 +249,6 @@ function selectTime(selectedTime) {
     $("#sum").prop("disabled", true).val("");
     $("#create").prop("disabled", true);
   }
+  console.log("Time begin: " + booking_time_begin.val());
+  console.log("Time end: " + booking_time_end.val());
 }

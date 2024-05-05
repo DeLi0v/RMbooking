@@ -43,4 +43,4 @@ if (!$conn) {
 </body>
 
 </html>
-<?php } $db->close();?>
+<?php $db->close(); } ?>

@@ -26,7 +26,6 @@ function openPage(name) {
     },
     error: function() {
       console.log("Файл '/pages/", name, ".php' не найден");
-      location.reload();
     },
   });
 }

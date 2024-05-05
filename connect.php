@@ -22,7 +22,7 @@ class DB_Class
 
         // Проверяем, удалось ли подключиться к базе данных
         if (!$this->conn) {
-            header("Location: /index.php");
+            header("Location: /");
             // die("Подключение не удалось: " . mysqli_connect_error());
         } else {
             $this->conn->set_charset("utf8");

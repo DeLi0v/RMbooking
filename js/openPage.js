@@ -160,7 +160,7 @@ function selectTime(selectedTime) {
   }  
 
   timeBlocks.forEach(function (block) {
-    if (block.classList.contains("off")) {
+    if (block.classList.contains("off") || block.classList.contains("selectedOther")) {
       stop = true;
       return;
     } else {

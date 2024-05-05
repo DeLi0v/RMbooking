@@ -21,6 +21,7 @@ function openPage(name) {
     type: "HEAD",
     success: function() {
       elem.load("/pages/" + name + ".php");
+      localStorage.setItem('lastPage', name);
       console.log("Page changed");
     },
     error: () => console.log("Файл '/pages/", name, ".php' не найден"),

@@ -19,11 +19,13 @@ class DB_Class
     {
         // Создаем подключение к базе данных
         $this->conn = mysqli_connect($this->hostname, $this->username, $this->password, $this->database);
-        $this->conn->set_charset("utf8");
 
         // Проверяем, удалось ли подключиться к базе данных
         if (!$this->conn) {
-            die("Подключение не удалось: " . mysqli_connect_error());
+            header("Location: /index.php");
+            // die("Подключение не удалось: " . mysqli_connect_error());
+        } else {
+            $this->conn->set_charset("utf8");
         }
         
         return $this->conn;

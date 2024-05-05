@@ -225,7 +225,6 @@ function selectTime(selectedTime) {
     while (startBlock && startBlock !== endBlock) {
       if (startBlock.classList.contains("selectedOther")) {
         stop = true;
-        // return;
       }
       startBlock.classList.add("select");
       startBlock = startBlock.nextElementSibling;
@@ -233,10 +232,9 @@ function selectTime(selectedTime) {
     }
 
     if (stop) {
-      booking_time_end.val("");
+      booking_time_end.val(booking_time_begin.val().replace(/\d{2}:\d{2}$/, "59:59"));
 
       $('.timeBlock').removeClass('select');
-      // timeBlocks.removeClass("select");
       document.querySelector('[time="' + booking_time_begin.val() + '"]').classList.add("select");
     } else {
       endBlock.classList.add("select");

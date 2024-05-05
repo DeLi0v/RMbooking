@@ -4,8 +4,8 @@ $db = new DB_Class();
 $conn = $db->connect();
 if (!$conn) {
     header("Refresh: 1");
-}
-$db->close();
+} else {
+
 ?>
 
 <!doctype html>
@@ -43,3 +43,4 @@ $db->close();
 </body>
 
 </html>
+<?php } $db->close();?>

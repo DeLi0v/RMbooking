@@ -2,7 +2,12 @@
 class DB_Class
 {
     // Данные для подключения к базе данных
-    var $hostname = "localhost";
+    // var $hostname = "localhost";
+    // var $username = "a1";
+    // var $password = "1";
+    // var $database = "rmbooking";
+
+    var $hostname = "192.168.0.1";
     var $username = "a1";
     var $password = "1";
     var $database = "rmbooking";

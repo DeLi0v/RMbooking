@@ -24,7 +24,10 @@ function openPage(name) {
       localStorage.setItem('lastPage', name);
       console.log("Page changed");
     },
-    error: () => console.log("Файл '/pages/", name, ".php' не найден"),
+    error: function() {
+      console.log("Файл '/pages/", name, ".php' не найден");
+      location.reload();
+    },
   });
 }
 

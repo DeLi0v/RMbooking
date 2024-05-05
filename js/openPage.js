@@ -225,7 +225,7 @@ function selectTime(selectedTime) {
     while (startBlock && startBlock !== endBlock) {
       if (startBlock.classList.contains("selectedOther")) {
         stop = true;
-        return;
+        // return;
       }
       startBlock.classList.add("select");
       startBlock = startBlock.nextElementSibling;

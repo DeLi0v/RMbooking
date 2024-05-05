@@ -15,12 +15,18 @@
 
     <!-- TODO: разобраться с подключением локальной копией JQuery  -->
 
-    <!-- <script src="/js/jquery.min.js"></script> -->
+    <script src="/js/jquery.min.js"></script>
     <!-- <script src="/js/jquery-3.7.1.slim.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
     <script src="/js/jquery-mask.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script> -->
     <script src="/js/openPage.js"></script>
+    <script>
+        window.onpopstate = function(event) {
+            // Обработка изменения истории
+            console.log("Location: " + document.location + ", state: " + JSON.stringify(event.state));
+        };
+    </script>
 </body>
 
 </html>

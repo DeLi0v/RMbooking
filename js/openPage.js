@@ -5,13 +5,14 @@ function openPage(name) {
   $(".tablinks").removeClass("active");
   $("#" + name + "Btn").addClass("active");
 
+  localStorage.setItem('lastPage', name);
+
   const elem = $(".content");
   $.ajax({
     url: "/pages/" + name + ".php",
     type: "HEAD",
     success: function() {
       elem.load("/pages/" + name + ".php");
-      localStorage.setItem('lastPage', name);
       console.log("Page changed");
     },
     error: function(xhr, status, error) {

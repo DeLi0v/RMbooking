@@ -7,6 +7,9 @@ if ($page == "booking") {
     require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");
     $db = new DB_Class();
     $conn = $db->connect();
+    if (!$conn) {
+        http_response_code(503);
+    }
     mysqli_select_db($conn, $db->database); ?>
 
     <form id="editForm">

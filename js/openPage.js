@@ -14,8 +14,12 @@ function openPage(name) {
       localStorage.setItem('lastPage', name);
       console.log("Page changed");
     },
-    error: function() {
-      console.log("Файл '/pages/", name, ".php' не найден");
+    error: function(xhr, status, error) {
+      if(xhr.status == 503) {
+        location.reload();
+      } else {
+        console.log("Файл '/pages/", name, ".php' не найден");
+      }
     },
   });
 }

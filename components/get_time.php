@@ -26,7 +26,7 @@ if (mysqli_num_rows($result) > 0) {
         $end_time = new DateTime($row['booking_time_end']);
         while ($start_time <= $end_time) {
             if ($client !== null && $client !== "" && $row["client"] == $client) {
-                $clientTimeBlocksFromDB[] = $start_time->format("H");;
+                $clientTimeBlocksFromDB[] = $start_time->format("H");
             }
             $timeBlocksFromDB[] = $start_time->format("H");;
             $start_time->modify('+1 hour'); // Увеличиваем на час

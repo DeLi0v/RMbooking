@@ -275,7 +275,7 @@ if ($page == "booking") {
                 $.ajax({
                     url: "/components/get_time.php",
                     method: "POST",
-                    data: { booking_date: selectedDate, room: room },
+                    data: { booking_date: selectedDate, room: room, client: null },
                     success: function(response) {
                         $("#timeSlots").html(response);
                     },

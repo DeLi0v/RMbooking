@@ -2,4 +2,8 @@ RewriteEngine On
 RewriteBase /
 
 # Перенаправление запросов на страницы в .content
-RewriteRule ^(.*)$ index.php [L]
+; RewriteRule ^(.*)$ index.php [L,QSA]
+RewriteRule ^booking$ index.php
+RewriteRule ^rooms$ index.php
+RewriteRule ^clients$ index.php
+RewriteRule ^staff$ index.php

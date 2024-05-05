@@ -21,7 +21,7 @@ function openPage(name) {
     type: "HEAD",
     success: function() {
         elem.load("/pages/" + name + ".php", function() {
-        history.pushState({ page: name }, "", "?page=" + name);
+        // history.pushState({ page: name }, "", "?page=" + name);
         console.log("Page changed");
       });
     },

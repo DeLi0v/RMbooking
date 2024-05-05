@@ -3,7 +3,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/connect.php");
 $db = new DB_Class();
 $conn = $db->connect();
 if (!$conn) {
-    header("Refresh: 1");
+    header("Refresh: 0");
 } else {
 
 ?>

@@ -1,19 +1,9 @@
 function openPage(name) {
-  // Declare all variables
-  var i, tablinks;
   
   console.log("Change page to: " + name);
 
   $(".tablinks").removeClass("active");
-  $("#" + name).addClass("active");
-  // tablinks = document.getElementsByClassName("tablinks");
-  // for (i = 0; i < tablinks.length; i++) {
-  //   // tablinks[i].className = tablinks[i].className.replace(" active", "");
-  //   tablinks[i].classList.remove("active");
-  // }
-  // $('#'+name).classList.add("active");
-  // document.getElementById(name).currentTarget.className += " active";
-  // evt.currentTarget.className += " active";
+  $("#" + name + "Btn").addClass("active");
 
   const elem = $(".content");
   $.ajax({

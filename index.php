@@ -10,7 +10,7 @@
     <?php include_once ($_SERVER['DOCUMENT_ROOT']."/navBar.php") ?>
 
     <div class="content">
-        <?php include_once ($_SERVER['DOCUMENT_ROOT']."/pages/booking.php") ?>
+        <!-- <?php include_once ($_SERVER['DOCUMENT_ROOT']."/pages/booking.php") ?> -->
     </div>
 
     <!-- TODO: разобраться с подключением локальной копией JQuery  -->
@@ -24,9 +24,9 @@
     <script>
         $(document).ready(function() {
             if (localStorage.getItem('lastPage')) {
-                // Если есть, загружаем последнее содержимое в блок .content
-                openPage(localStorage.getItem('lastPage'))
-                // $('.content').html(localStorage.getItem('lastContent'));
+                openPage(localStorage.getItem('lastPage'));
+            } else {
+                openPage('booking');
             }
         });
     </script>

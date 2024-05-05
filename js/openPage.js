@@ -160,7 +160,7 @@ function selectTime(selectedTime) {
   }  
 
   timeBlocks.forEach(function (block) {
-    if (block.classList.contains("off") || block.classList.contains("selectedOther")) {
+    if (block.classList.contains("off")) {
       stop = true;
       return;
     } else {
@@ -233,6 +233,10 @@ function selectTime(selectedTime) {
     }
     if (stop) {
       booking_time_end.val("");
+
+      timeBlocks.classList.remove("select");
+      document.querySelector('[time="' + booking_time_begin.val() + '"]').classList.add("select");
+
       return;
     }
     endBlock.classList.add("select");

@@ -20,7 +20,7 @@ function openPage(name) {
     url: "/pages/" + name + ".php",
     type: "HEAD",
     success: function() {
-        elem.load("/pages/" + name + ".php");
+      elem.load("/pages/" + name + ".php");
       console.log("Page changed");
     },
     error: () => console.log("Файл '/pages/", name, ".php' не найден"),

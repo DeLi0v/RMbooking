@@ -231,23 +231,25 @@ function selectTime(selectedTime) {
       startBlock = startBlock.nextElementSibling;
       hours++;
     }
+
     if (stop) {
       booking_time_end.val("");
 
       timeBlocks.classList.remove("select");
       document.querySelector('[time="' + booking_time_begin.val() + '"]').classList.add("select");
+    } else {
+      endBlock.classList.add("select");
+      $("#sum").prop("disabled", false).val("");
+      $("#create").prop("disabled", false);
 
-      return;
+      if (price != 0 && hours != 0) {
+        var totalPrice = price * hours;
+        $("#sum").val(totalPrice)
+      }
+
+      console.log("Price: " + price);
+      console.log("Hours: " + hours);
     }
-    endBlock.classList.add("select");
-    $("#sum").prop("disabled", false).val("");
-    $("#create").prop("disabled", false);
-    if (price != 0 && hours != 0) {
-      var totalPrice = price * hours;
-      $("#sum").val(totalPrice)
-    }
-    console.log("Price: " + price);
-    console.log("Hours: " + hours);
   } else {
     $("#sum").prop("disabled", true).val("");
     $("#create").prop("disabled", true);

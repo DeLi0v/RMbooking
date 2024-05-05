@@ -20,10 +20,8 @@ function openPage(name) {
     url: "/pages/" + name + ".php",
     type: "HEAD",
     success: function() {
-        elem.load("/pages/" + name + ".php", function() {
-        // history.pushState({ page: name }, "", "?page=" + name);
-        console.log("Page changed");
-      });
+        elem.load("/pages/" + name + ".php");
+      console.log("Page changed");
     },
     error: () => console.log("Файл '/pages/", name, ".php' не найден"),
   });

@@ -156,7 +156,7 @@ function selectTime(selectedTime) {
 
 
   var selectedBlock = document.querySelector('[value="' + time + '"]');
-  if (selectedBlock && selectedBlock.classList.contains("selectedOther")) {
+  if (selectedBlock.classList.contains("selectedOther")) {
     return;
   }  
 
